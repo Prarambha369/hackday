@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/hack-day-logo-new.png";
+import logo from "@/assets/1000015171.png";
+import topLeftLogo from "@/assets/579501461_1354121903124379_5661373177081933099_n-removebg-preview.png";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,14 +24,19 @@ const Navbar = () => {
     { label: "Challenges", href: "#challenges" },
     { label: "Sponsors", href: "#sponsors" },
     { label: "FAQ", href: "#faq" },
+    { label: "Code of Conduct", href: "/cod" },
   ];
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setIsMobileMenuOpen(false);
+    if (href.startsWith("/")) {
+      navigate(href);
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setIsMobileMenuOpen(false);
+      }
     }
   };
 
@@ -40,11 +48,19 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className={`flex items-center justify-between ${isScrolled ? 'py-2' : 'py-4'} transition-all duration-300`}>
-          <a href="#" className="flex items-center gap-3 group">
-            <img 
-              src={logo} 
-              alt="Hack Day" 
-              className={`${isScrolled ? 'h-16 md:h-20' : 'h-28 md:h-36'} w-auto transform group-hover:scale-105 transition-all duration-300`}
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate('/');
+              setIsMobileMenuOpen(false);
+            }}
+            className="flex items-center gap-3 group"
+          >
+            <img
+              src={isScrolled ? logo : topLeftLogo}
+              alt="Butwal Hack"
+              className={`w-auto transform group-hover:scale-105 transition-all duration-500 ${isScrolled ? 'h-16 md:h-20 translate-y-0 opacity-100' : 'h-20 md:h-28 -translate-y-1 opacity-100'}`}
             />
           </a>
 
@@ -63,8 +79,9 @@ const Navbar = () => {
             <Button 
               size="sm" 
               className="transform -rotate-1 hover:rotate-0"
+              onClick={() => window.open('https://butwal.devpost.com/', '_blank')}
             >
-              Register Now
+              Register on Devpost
             </Button>
           </div>
 
@@ -91,8 +108,8 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button size="sm" className="w-full">
-                Register Now
+              <Button size="sm" className="w-full" onClick={() => window.open('https://butwal.devpost.com/', '_blank')}>
+                Register on Devpost
               </Button>
             </div>
           </div>

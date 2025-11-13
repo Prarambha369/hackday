@@ -1,4 +1,4 @@
-import { MessageCircle, Instagram, Facebook, Github, Mail } from "lucide-react";
+import { MessageCircle, Instagram, Github, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Hack Day Butwal 1.0</h3>
+            <h3 className="text-xl font-bold mb-4">Butwal Hack</h3>
             <p className="text-sm text-muted-foreground">
               A student-focused hackathon inspired by Major League Hacking,
               bringing together Nepal's brightest innovators.
@@ -51,15 +51,15 @@ const Footer = () => {
             <h4 className="font-bold mb-4">Get in Touch</h4>
             <div className="space-y-3">
               <a
-                href="mailto:team@butwalhacks.com"
+                href="mailto:support@butwalhacks.com"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                team@butwalhacks.com
+                support@butwalhacks.com
               </a>
               <div className="flex gap-3">
                 <a
-                  href="https://www.instagram.com/b.edant__fr_/"
+                  href="https://www.instagram.com/direct/t/758290143656900/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all"
@@ -67,21 +67,9 @@ const Footer = () => {
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://www.facebook.com/bedant.gautam.7/"
+                  href="https://github.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all"
-                >
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
                   className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all"
                 >
                   <Github className="w-5 h-5" />
@@ -103,7 +91,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="text-center text-sm text-muted-foreground">
           <p>
-            © 2025 Hack Day — Butwal 1.0 | Inspired by{" "}
+            © 2025 Butwal Hack | Inspired by{" "}
             <a
               href="https://mlh.io"
               target="_blank"

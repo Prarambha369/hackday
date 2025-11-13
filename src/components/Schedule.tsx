@@ -67,10 +67,10 @@ const Schedule = () => {
           </p>
           
           <div className="bg-card border-4 border-foreground p-8 transform rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-2xl mx-auto">
-            <p className="text-6xl font-black text-primary mb-4 font-heading">January 16</p>
-            <p className="text-2xl font-bold text-foreground mb-2">Save the Date!</p>
+            <p className="text-6xl font-black text-primary mb-4 font-heading">January 17</p>
+            <p className="text-2xl font-bold text-foreground mb-2">Event Date</p>
             <p className="text-lg text-muted-foreground">
-              Detailed event schedule will be revealed soon. Stay tuned!
+              Detailed schedule to be revealed soon. Stay tuned!
             </p>
           </div>
         </div>
