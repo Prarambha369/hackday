@@ -27,6 +27,25 @@ const About = () => {
                 Butwal Hack is a <span className="font-black text-primary">web development & innovation hackathon</span> in Butwal, Nepal, 
                 inspired by <span className="font-black text-primary">Major League Hacking (MHL)</span>. This student hackathon unites <span className="font-black text-primary">creators, developers, 
                 and innovators</span> from across Nepal for web development challenges, AI projects, mobile app development, and more. Build impactful solutions, gain experience, and connect with Nepal's tech community! 🚀
+              </p>
+            </Card>
+          </div>
+
+          <Card className="p-10 bg-accent/10 border-4 border-foreground transform -rotate-1 shadow-[10px_10px_0px_0px_hsl(var(--accent))] hover:shadow-[14px_14px_0px_0px_hsl(var(--accent))] hover:-translate-y-1 transition-all">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="w-16 h-16 bg-primary border-4 border-foreground flex items-center justify-center transform -rotate-6">
+                <ExternalLink className="w-8 h-8 text-primary-foreground" />
+              </div>
+              <div>
+                <h3 className="text-3xl font-black text-foreground font-heading mb-2">
+                  What is MLH?
+                </h3>
+                <div className="w-24 h-1 bg-primary" />
+              </div>
+            </div>
+            <p className="text-lg text-foreground leading-relaxed mb-8 font-medium">
+              Major League Hacking (MLH) is a <span className="font-bold">global organization</span> that supports 
+              student hackathons. This event follows MLH's code of conduct, values, and innovation spirit. ✨
             </p>
             <Button 
               variant="outline" 
