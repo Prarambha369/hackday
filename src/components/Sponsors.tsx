@@ -20,7 +20,7 @@ const Sponsors = () => {
             <div className="absolute -bottom-3 left-0 w-full h-4 bg-primary/20 -rotate-1" />
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Partner with Hack Day Butwal 1.0 to support innovation and connect
+            Partner with Butwal Hack to support innovation and connect
             with Nepal's brightest student developers.
           </p>
         </div>
@@ -42,11 +42,14 @@ const Sponsors = () => {
 
         <div className="text-center mt-12">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="transform -rotate-1 hover:rotate-0">Become a Sponsor</Button>
-            <Button size="lg" variant="outline" className="transform rotate-1 hover:rotate-0">
-              <Download className="mr-2 w-4 h-4" />
-              Download Sponsorship Deck (PDF)
+            <Button
+              size="lg"
+              className="transform -rotate-1 hover:rotate-0"
+              onClick={() => window.open('mailto:mail@butwalhacks.com')}
+            >
+              Become a Sponsor
             </Button>
+            {/* Sponsorship deck download removed — contact via email */}
           </div>
         </div>
       </div>

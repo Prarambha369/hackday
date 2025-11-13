@@ -29,7 +29,7 @@ const registrationSchema = z.object({
   phone: z.string().min(10, "Phone must be at least 10 digits").max(20),
   institution: z.string().min(2, "Institution name required").max(200),
   team_name: z.string().max(100).optional(),
-  team_size: z.number().min(1).max(4),
+  team_size: z.number().min(2).max(3),
   experience_level: z.enum(["beginner", "intermediate", "advanced"]),
   interests: z.array(z.string()).min(1, "Select at least one interest"),
 });
@@ -96,7 +96,7 @@ const RegistrationForm = ({ open, onOpenChange }: RegistrationFormProps) => {
 
       toast({
         title: "Registration Successful! 🎉",
-        description: "We've received your registration. See you at Hack Day!",
+        description: "We've received your registration. See you at Butwal Hack!",
       });
 
       reset();
@@ -119,7 +119,7 @@ const RegistrationForm = ({ open, onOpenChange }: RegistrationFormProps) => {
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto border-4 border-foreground">
         <DialogHeader>
           <DialogTitle className="text-3xl font-black text-primary">
-            Register for Hack Day Butwal 1.0
+            Register for Butwal Hack
           </DialogTitle>
           <DialogDescription>
             Fill in your details to secure your spot at Nepal's premier 12-hour
@@ -218,22 +218,20 @@ const RegistrationForm = ({ open, onOpenChange }: RegistrationFormProps) => {
 
             <div>
               <Label htmlFor="team_size" className="font-bold">
-                Team Size *
+                Team Size * (2-3 members required)
               </Label>
               <Select
                 onValueChange={(value) =>
                   setValue("team_size", parseInt(value))
                 }
-                defaultValue="1"
+                defaultValue="2"
               >
                 <SelectTrigger className="border-2 border-foreground">
                   <SelectValue placeholder="Select team size" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="1">Solo (1 person)</SelectItem>
                   <SelectItem value="2">2 people</SelectItem>
                   <SelectItem value="3">3 people</SelectItem>
-                  <SelectItem value="4">4 people</SelectItem>
                 </SelectContent>
               </Select>
             </div>

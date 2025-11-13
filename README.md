@@ -2,7 +2,7 @@
 
 ## Project info
 
-This repository contains the source for the Hack Day — Butwal 1.0 website and web app.
+This repository contains the source for the Butwal Hack website and web app.
 
 ## How to edit and run locally
 

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <rect width="100%" height="100%" fill="#0f172a" rx="12" />
+  <text x="50%" y="55%" font-family="Inter, sans-serif" font-size="36" fill="#fff" font-weight="800" text-anchor="middle" dominant-baseline="middle">Butwal Hack</text>
+  <rect x="16" y="84" width="368" height="12" fill="#06b6d4" rx="6" />
+</svg>

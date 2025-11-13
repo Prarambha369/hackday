@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Instagram, Facebook } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 const Community = () => {
   return (
@@ -15,27 +15,14 @@ const Community = () => {
         </div>
 
         <div className="flex flex-wrap gap-4 justify-center mb-16">
-          <Button size="lg" className="gap-2">
-            <MessageCircle className="w-5 h-5" />
-            Join Discord
-          </Button>
           <Button 
             size="lg" 
             variant="outline" 
             className="gap-2"
-            onClick={() => window.open('https://www.instagram.com/b.edant__fr_/', '_blank')}
+            onClick={() => window.open('https://www.instagram.com/direct/t/758290143656900/', '_blank')}
           >
             <Instagram className="w-5 h-5" />
             Follow on Instagram
-          </Button>
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="gap-2"
-            onClick={() => window.open('https://www.facebook.com/bedant.gautam.7/', '_blank')}
-          >
-            <Facebook className="w-5 h-5" />
-            Follow on Facebook
           </Button>
         </div>
       </div>

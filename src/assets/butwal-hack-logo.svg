@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <!-- Black background -->
+  <rect width="800" height="300" fill="#000000"/>
+  
+  <!-- HACK text (large, orange) -->
+  <text x="140" y="140" font-family="Arial Black, sans-serif" font-size="120" font-weight="bold" fill="#FF8C00" stroke="#FFFFFF" stroke-width="4">HACK</text>
+  
+  <!-- Butwal Day text (orange) -->
+  <text x="100" y="220" font-family="Arial Black, sans-serif" font-size="80" font-weight="bold" fill="#FF8C00" stroke="#FFFFFF" stroke-width="3">Butwal</text>
+  <text x="380" y="220" font-family="Arial Black, sans-serif" font-size="80" font-weight="bold" fill="#FFB366" stroke="#FFFFFF" stroke-width="3">Day</text>
+  
+  <!-- Butwal Hacks badge (top right) -->
+  <rect x="520" y="60" width="200" height="80" rx="15" fill="#CC4400" stroke="#FFFFFF" stroke-width="3"/>
+  <text x="620" y="115" font-family="Arial Black, sans-serif" font-size="32" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Butwal</text>
+  <text x="620" y="145" font-family="Arial Black, sans-serif" font-size="28" font-weight="bold" fill="#FFB366" text-anchor="middle">Hacks</text>
+  
+  <!-- Plane/X icon (top middle area) -->
+  <g transform="translate(450, 90)">
+    <circle cx="0" cy="0" r="30" fill="#FF8C00" stroke="#FFFFFF" stroke-width="3"/>
+    <text x="0" y="12" font-family="Arial" font-size="40" font-weight="bold" fill="#FFFFFF" text-anchor="middle">✈</text>
+  </g>
+</svg>
