@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Download } from "lucide-react";
+import sponsorImg from "@/lib/WhatsApp Image 2025-11-28 at 22.35.34.jpeg";
+import sponsorImgBronze from "@/WhatsApp Image 2025-11-28 at 22.35.31.jpeg";
+import sponsorImg2 from "@/integrations/WhatsApp Image 2025-11-28 at 22.35.37.jpeg";
 
 const Sponsors = () => {
   const sponsors = {
@@ -33,7 +36,30 @@ const Sponsors = () => {
                 className="bg-card border-4 border-foreground p-6 transform hover:-rotate-1 transition-all shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1"
               >
                 <div className="aspect-square bg-muted flex items-center justify-center">
-                  <span className="text-muted-foreground font-bold">Sponsor {i}</span>
+                  {i === 1 ? (
+                    <img
+                      src={sponsorImg}
+                      alt="Sponsor logo"
+                      className="w-28 h-28 rounded-full object-cover"
+                    />
+                  ) : i === 6 ? (
+                    <div className="flex flex-col items-center">
+                      <img
+                        src={sponsorImgBronze}
+                        alt="Bronze sponsor"
+                        className="w-24 h-24 rounded-full object-cover"
+                      />
+                      <span className="mt-2 text-sm font-semibold text-muted-foreground">bronze sponsred</span>
+                    </div>
+                  ) : i === 7 ? (
+                    <img
+                      src={sponsorImg2}
+                      alt="Sponsor logo"
+                      className="w-24 h-24 rounded-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-muted-foreground font-bold">Sponsor {i}</span>
+                  )}
                 </div>
               </div>
             ))}
