@@ -6,6 +6,7 @@ import sponsorImgBronze from "@/WhatsApp Image 2025-11-28 at 22.35.31.jpeg";
 import sponsorImg2 from "@/integrations/WhatsApp Image 2025-11-28 at 22.35.37.jpeg";
 import sponsorImg3 from "@/WhatsApp Image 2025-11-28 at 22.55.28.jpeg";
 import sponsorImg4 from "@/WhatsApp Image 2025-11-28 at 22.56.09.jpeg";
+import sponsorImgSupabase from "@/supabase/WhatsApp Image 2025-11-28 at 22.56.09.jpeg";
 import sponsorImg5 from "@/WhatsApp Image 2025-11-28 at 23.00.42.jpeg";
 
 const Sponsors = () => {
@@ -48,6 +49,12 @@ const Sponsors = () => {
                   ) : i === 2 ? (
                     <img
                       src={sponsorImg5}
+                      alt="Sponsor logo"
+                      className="w-24 h-24 rounded-full object-cover"
+                    />
+                  ) : i === 4 ? (
+                    <img
+                      src={sponsorImgSupabase}
                       alt="Sponsor logo"
                       className="w-24 h-24 rounded-full object-cover"
                     />
