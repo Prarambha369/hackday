@@ -26,15 +26,50 @@ const Sponsors = () => {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-              <div
-                key={i}
-                className="bg-card border-4 border-foreground p-6 transform hover:-rotate-1 transition-all shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1"
-              >
-                <div className="aspect-square bg-muted flex items-center justify-center">
-                  <span className="text-muted-foreground font-bold">Sponsor {i}</span>
+          <div className="flex flex-wrap justify-center gap-12">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((i) => (
+              <div key={i} className="flex flex-col items-center gap-2">
+                <div
+                  className="w-32 h-32 rounded-full flex items-center justify-center transition-all hover:bg-primary/20 overflow-hidden"
+                  style={(i === 1 || i === 2 || i === 3 || i === 4 || i === 5 || i === 6 || i === 7 || i === 8) ? { backgroundColor: 'transparent' } : undefined}
+                >
+                  {i === 1 ? (
+                    <img src="/1.jpg" alt="Bronze Sponsor" className="w-full h-full object-cover rounded-full" />
+                  ) : i === 2 ? (
+                    <img src="/7.jpg" alt="EyeCare Partner" className="w-full h-full object-cover rounded-full" />
+                  ) : i === 3 ? (
+                    <img src="/2.jpg" alt="Event Partner" className="w-full h-full object-cover rounded-full" />
+                  ) : i === 4 ? (
+                    <img src="/4.jpg" alt="Venue Partner" className="w-full h-full object-cover rounded-full" />
+                  ) : i === 5 ? (
+                    <img src="/6.jpg" alt="Work Space Partner" className="w-full h-full object-cover rounded-full" />
+                  ) : i === 6 ? (
+                    <img src="/WhatsApp Image 2025-11-28 at 23.00.42.jpeg" alt="Education Partner" className="w-full h-full object-cover rounded-full" />
+                  ) : i === 7 ? (
+                    <img src="/WhatsApp Image 2025-11-28 at 22.55.28 (1).jpeg" alt="Domain Partner" className="w-full h-full object-cover rounded-full" />
+                  ) : i === 8 ? (
+                    <img src="/3.jpg" alt="Theater Partner" className="w-full h-full object-cover rounded-full" />
+                  ) : i === 9 ? (
+                    <img src="/5.jpg" alt="Delivery Partner" className="w-full h-full object-cover rounded-full" />
+                  ) : i === 10 ? (
+                    <img src="/WhatsApp Image 2025-11-28 at 22.56.09 (1).jpeg" alt="Out Reach Partner" className="w-full h-full object-cover rounded-full" />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 rounded-full bg-primary/10" />
+                      <span className="text-foreground font-bold text-center text-sm px-4 relative z-10">Sponsor {i}</span>
+                    </>
+                  )}
                 </div>
+                {i === 1 && <span className="text-foreground font-semibold text-sm">Bronze Sponsor</span>}
+                {i === 2 && <span className="text-foreground font-semibold text-sm">EyeCare Partner</span>}
+                {i === 3 && <span className="text-foreground font-semibold text-sm">Event Partner</span>}
+                {i === 4 && <span className="text-foreground font-semibold text-sm">Venue Partner</span>}
+                {i === 5 && <span className="text-foreground font-semibold text-sm">Work Space Partner</span>}
+                {i === 6 && <span className="text-foreground font-semibold text-sm">Education Partner</span>}
+                {i === 7 && <span className="text-foreground font-semibold text-sm">Domain Partner</span>}
+                {i === 8 && <span className="text-foreground font-semibold text-sm">Theater Partner</span>}
+                {i === 9 && <span className="text-foreground font-semibold text-sm">Delivery Partner</span>}
+                {i === 10 && <span className="text-foreground font-semibold text-sm">Out Reach Partner</span>}
               </div>
             ))}
           </div>

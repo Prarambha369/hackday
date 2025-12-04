@@ -79,23 +79,7 @@ const Workshops = () => {
           ))}
         </div>
 
-        {/* Our Team Section */}
-        <div className="mt-20">
-          <div className="text-center mb-12">
-            <div className="inline-block relative">
-              <h3 className="text-3xl md:text-4xl font-black text-foreground transform rotate-1">
-                Meet Our Team
-              </h3>
-              <div className="absolute -bottom-2 left-0 w-full h-3 bg-accent/30 rotate-1" />
-            </div>
-          </div>
-
-          <div className="flex justify-center">
-            <div className="bg-card border-4 border-foreground p-8 transform -rotate-2 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-sm">
-              <p className="text-xl text-muted-foreground text-center">Team members will be revealed soon!</p>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
