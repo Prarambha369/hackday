@@ -3,12 +3,6 @@ import { Card } from "@/components/ui/card";
 import { Download } from "lucide-react";
 
 const Sponsors = () => {
-  const sponsors = {
-    platinum: ["Sponsor Logo 1", "Sponsor Logo 2"],
-    gold: ["Sponsor Logo 3", "Sponsor Logo 4", "Sponsor Logo 5"],
-    silver: ["Sponsor Logo 6", "Sponsor Logo 7", "Sponsor Logo 8", "Sponsor Logo 9"],
-  };
-
   return (
     <section id="sponsors" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -30,11 +24,14 @@ const Sponsors = () => {
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((i) => (
               <div key={i} className="flex flex-col items-center gap-2">
                 <div
-                  className="w-32 h-32 rounded-full flex items-center justify-center transition-all hover:bg-primary/20 overflow-hidden"
-                  style={(i === 1 || i === 2 || i === 3 || i === 4 || i === 5 || i === 6 || i === 7 || i === 8) ? { backgroundColor: 'transparent' } : undefined}
+                  className={`rounded-full flex items-center justify-center transition-all hover:bg-primary/20 overflow-hidden ${i === 1 ? 'w-48 h-48' : 'w-32 h-32'}`}
+                  style={(i >=1 && i <=8) ? { backgroundColor: 'transparent' } : undefined}
                 >
                   {i === 1 ? (
-                    <img src="/1.jpg" alt="Bronze Sponsor" className="w-full h-full object-cover rounded-full" />
+                    <>
+                      <div className="absolute inset-0 rounded-full bg-primary/10" />
+                      <span className="text-foreground font-bold text-center text-sm px-4 relative z-10">Sponsor {i}</span>
+                    </>
                   ) : i === 2 ? (
                     <img src="/7.jpg" alt="EyeCare Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 3 ? (
@@ -93,3 +90,4 @@ const Sponsors = () => {
 };
 
 export default Sponsors;
+                    <img src="/2.jpg" alt="Event Partner" className="w-full h-full object-cover rounded-full" />
