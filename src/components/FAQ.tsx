@@ -10,9 +10,8 @@ import { Download, HelpCircle } from "lucide-react";
 const FAQ = () => {
   const faqs = [
     {
-      question: "Who can participate?",
-      answer:
-        "Any student currently enrolled in high school, college, or university is welcome to participate. You don't need prior hackathon experience!",
+      question: "Is it free?",
+      answer: "Yes!! It's free under MHL.",
     },
     {
       question: "Do I need prior experience?",
@@ -56,7 +55,7 @@ const FAQ = () => {
         <div className="text-center mb-16">
           <div className="relative inline-block mb-6">
             <h2 className="text-4xl md:text-6xl font-black text-foreground font-heading transform rotate-1">
-              FAQ - Butwal Hack Hackathon
+              FAQ of Hack Day Butwal
             </h2>
             <svg className="absolute -bottom-3 right-4 w-2/3 h-4" viewBox="0 0 200 12" preserveAspectRatio="none">
               <path d="M0,7 Q50,3 100,7 T200,7" stroke="hsl(var(--primary))" strokeWidth="4" fill="none" strokeLinecap="round"/>
