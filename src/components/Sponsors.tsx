@@ -28,10 +28,7 @@ const Sponsors = () => {
                   style={(i >=1 && i <=8) ? { backgroundColor: 'transparent' } : undefined}
                 >
                   {i === 1 ? (
-                    <>
-                      <div className="absolute inset-0 rounded-full bg-primary/10" />
-                      <span className="text-foreground font-bold text-center text-sm px-4 relative z-10">Sponsor {i}</span>
-                    </>
+                    <img src="/1.jpg" alt="Bronze Sponsor" className="w-3/4 h-3/4 object-contain rounded-full" />
                   ) : i === 2 ? (
                     <img src="/7.jpg" alt="EyeCare Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 3 ? (
