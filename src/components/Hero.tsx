@@ -35,12 +35,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Chaotic Decorative Elements */}
-      <div className="absolute top-20 left-10 w-24 h-24 border-4 border-primary/20 rotate-12 animate-tilt hidden lg:block" />
-      <div className="absolute top-40 right-20 w-16 h-16 bg-accent/10 -rotate-45 animate-float hidden lg:block" />
-      <div className="absolute bottom-20 left-1/4 w-20 h-20 border-4 border-accent/20 rotate-45 animate-wiggle hidden lg:block" />
-      <div className="absolute top-1/3 right-10 w-12 h-12 bg-primary/10 rotate-12 animate-float-reverse hidden lg:block" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
 
       {/* Floating Icons */}
       <div className="absolute top-32 right-1/4 animate-float hidden lg:block">
@@ -196,9 +191,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Decorative Bottom Elements */}
-      <div className="absolute bottom-10 right-10 w-32 h-32 border-4 border-primary/10 -rotate-12 hidden lg:block" />
-      <div className="absolute bottom-20 left-20 w-24 h-24 bg-accent/5 rotate-45 hidden lg:block" />
+      {/* Decorative Bottom Elements (removed to keep section background plain white) */}
 
       {/* Registration is handled on Devpost (link in Register buttons) */}
     </section>
