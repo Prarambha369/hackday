@@ -93,6 +93,14 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Organizer & Event Mentions */}
+        <div className="text-center mb-6">
+          <p className="text-sm text-foreground">Butwal Hacks</p>
+          <p className="text-sm text-foreground">Event Organiser Butwal Hacks</p>
+          <p className="text-sm text-foreground">Butwal Hacks</p>
+          <p className="text-sm text-foreground">Event by Mlh x Google Gemini</p>
+        </div>
+
         {/* Copyright */}
         <div className="text-center text-sm text-muted-foreground">
           <p>
