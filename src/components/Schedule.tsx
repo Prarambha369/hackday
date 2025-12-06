@@ -72,6 +72,24 @@ const Schedule = () => {
             <p className="text-lg text-muted-foreground">
               Detailed schedule to be revealed soon. Stay tuned!
             </p>
+
+            <div className="mt-6 flex flex-col items-center gap-4">
+              <a
+                href="https://events.mlh.io/events/13395-hackday-butwal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white transform -rotate-1">
+                  Register on MLH
+                </Button>
+              </a>
+
+              <div className="text-sm text-foreground mt-2 text-center">
+                <p><strong>When:</strong> 17 Jan</p>
+                <p><strong>Where:</strong> Lumbini World School</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
