@@ -3,10 +3,10 @@ const Team = () => {
     { name: "Sirjal Adhikari", phone: "9744319122" },
     { name: "Bedant Gautam", phone: "9766311444" },
     { name: "Saksham Gyawali", phone: "9844180185" },
-    { name: "Prarambha Bashyal", phone: "9768841245" },
-    { name: "Hardik Chapagain", phone: "9762893422" },
-    { name: "Rabin Chudali", phone: "9867308535" },
     { name: "Basanta Aryal", phone: "9767016364" },
+    { name: "Prarambha Bashyal", phone: "Prarambha@butwalhacks.com" },
+    { name: "Hardik Chapagain", phone: "Hardik@butwalhacks.com" },
+    { name: "Rabin Chudali", phone: "Rabin@butwalhacks.com" },
   ];
 
   return (
@@ -26,10 +26,16 @@ const Team = () => {
                 className="bg-white text-black border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-transform ease-out duration-150 hover:-translate-y-1"
               >
                 <div className="flex flex-col items-start gap-3">
-                  <h3 className="text-lg font-bold leading-6">{member.name}</h3>
-                  <a href={`tel:${member.phone}`} className="text-purple-600 font-semibold">
-                    {member.phone}
-                  </a>
+                  <h3 className="text-lg font-bold leading-6 text-orange-500">{member.name}</h3>
+                  {member.phone && member.phone.includes("@") ? (
+                    <a href={`mailto:${member.phone}`} className="text-orange-500 font-semibold">
+                      {member.phone}
+                    </a>
+                  ) : (
+                    <a href={`tel:${member.phone}`} className="text-orange-500 font-semibold">
+                      {member.phone}
+                    </a>
+                  )}
                 </div>
               </article>
             ))}

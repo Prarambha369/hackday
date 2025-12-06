@@ -28,25 +28,25 @@ const Sponsors = () => {
                   style={(i >=1 && i <=8) ? { backgroundColor: 'transparent' } : undefined}
                 >
                   {i === 1 ? (
-                    <img src="/1.jpg" alt="Bronze Sponsor" className="w-3/4 h-3/4 object-contain rounded-full" />
+                    <img src="/1.png" alt="Bronze Sponsor" className="w-3/4 h-3/4 object-contain rounded-full" />
                   ) : i === 2 ? (
-                    <img src="/7.jpg" alt="EyeCare Partner" className="w-full h-full object-cover rounded-full" />
+                    <img src="/6.png" alt="EyeCare Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 3 ? (
                     <img src="/2.jpg" alt="Event Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 4 ? (
-                    <img src="/4.jpg" alt="Venue Partner" className="w-full h-full object-cover rounded-full" />
+                    <img src="/3.png" alt="Venue Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 5 ? (
-                    <img src="/6.jpg" alt="Work Space Partner" className="w-full h-full object-cover rounded-full" />
+                    <img src="/4.png" alt="Work Space Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 6 ? (
-                    <img src="/WhatsApp Image 2025-11-28 at 23.00.42.jpeg" alt="Education Partner" className="w-full h-full object-cover rounded-full" />
+                    <img src="/8.png" alt="Education Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 7 ? (
-                    <img src="/WhatsApp Image 2025-11-28 at 22.55.28 (1).jpeg" alt="Domain Partner" className="w-full h-full object-cover rounded-full" />
+                    <img src="/9.png" alt="Domain Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 8 ? (
-                    <img src="/3.jpg" alt="Theater Partner" className="w-full h-full object-cover rounded-full" />
+                    <img src="/2.png" alt="Theater Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 9 ? (
-                    <img src="/5.jpg" alt="Delivery Partner" className="w-full h-full object-cover rounded-full" />
+                    <img src="/5.png" alt="Delivery Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 10 ? (
-                    <img src="/WhatsApp Image 2025-11-28 at 22.56.09 (1).jpeg" alt="Out Reach Partner" className="w-full h-full object-cover rounded-full" />
+                    <img src="/10.png" alt="Out Reach Partner" className="w-full h-full object-cover rounded-full" />
                   ) : (
                     <>
                       <div className="absolute inset-0 rounded-full bg-primary/10" />
