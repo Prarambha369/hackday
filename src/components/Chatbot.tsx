@@ -14,7 +14,8 @@ const Chatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hi! I'm your Hack Day assistant. Ask me anything about the event!",
+      content:
+        "Hello! 👋 Welcome to HackDay Butwal. Ask me anything about the event, rules, venue, or registration!",
     },
   ]);
   const [input, setInput] = useState("");
@@ -129,7 +130,7 @@ const Chatbot = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && sendMessage()}
-                placeholder="Ask about the event..."
+                placeholder="Ask me about HackDay Butwal..."
                 className="flex-1 border-2 border-foreground"
                 disabled={isLoading}
               />
