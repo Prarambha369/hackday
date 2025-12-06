@@ -30,7 +30,7 @@ const Sponsors = () => {
                   {i === 1 ? (
                     <img src="/1.png" alt="Bronze Sponsor" className="w-3/4 h-3/4 object-contain rounded-full" />
                   ) : i === 2 ? (
-                    <img src="/7.jpg" alt="EyeCare Partner" className="w-full h-full object-cover rounded-full" />
+                    <img src="/6.png" alt="EyeCare Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 3 ? (
                     <img src="/2.jpg" alt="Event Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 4 ? (
