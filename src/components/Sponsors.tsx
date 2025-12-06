@@ -36,7 +36,7 @@ const Sponsors = () => {
                   ) : i === 4 ? (
                     <img src="/3.png" alt="Venue Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 5 ? (
-                    <img src="/6.jpg" alt="Work Space Partner" className="w-full h-full object-cover rounded-full" />
+                    <img src="/4.png" alt="Work Space Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 6 ? (
                     <img src="/WhatsApp Image 2025-11-28 at 23.00.42.jpeg" alt="Education Partner" className="w-full h-full object-cover rounded-full" />
                   ) : i === 7 ? (
