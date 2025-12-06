@@ -35,7 +35,7 @@ const Sponsors = () => {
               { src: '/WhatsApp Image 2025-11-28 at 23.00.42.jpeg', label: 'Education Partner' },
               { src: '/WhatsApp Image 2025-11-28 at 22.55.28 (1).jpeg', label: 'Domain Partner' },
               { src: '/2.png', label: 'Theater Partner' },
-              { src: '/5.jpg', label: 'Delivery Partner' },
+              { src: '/5.png', label: 'Delivery Partner' },
               { src: '/WhatsApp Image 2025-11-28 at 22.56.09 (1).jpeg', label: 'Out Reach Partner' },
             ].map((sponsor, idx) => (
               <div key={idx} className="flex flex-col items-center gap-2">
