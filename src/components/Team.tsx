@@ -26,13 +26,13 @@ const Team = () => {
                 className="bg-white text-black border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-transform ease-out duration-150 hover:-translate-y-1"
               >
                 <div className="flex flex-col items-start gap-3">
-                  <h3 className="text-lg font-bold leading-6">{member.name}</h3>
+                  <h3 className="text-lg font-bold leading-6 text-orange-500">{member.name}</h3>
                   {member.phone && member.phone.includes("@") ? (
-                    <a href={`mailto:${member.phone}`} className="text-purple-600 font-semibold">
+                    <a href={`mailto:${member.phone}`} className="text-orange-500 font-semibold">
                       {member.phone}
                     </a>
                   ) : (
-                    <a href={`tel:${member.phone}`} className="text-purple-600 font-semibold">
+                    <a href={`tel:${member.phone}`} className="text-orange-500 font-semibold">
                       {member.phone}
                     </a>
                   )}

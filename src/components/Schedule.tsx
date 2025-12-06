@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Calendar, Download, Clock } from "lucide-react";
+import { Calendar, Download, Clock, MapPin } from "lucide-react";
 
 const Schedule = () => {
   const schedule = [
@@ -85,9 +85,20 @@ const Schedule = () => {
                 </Button>
               </a>
 
-              <div className="text-sm text-foreground mt-2 text-center">
-                <p><strong>When:</strong> 17 Jan</p>
-                <p><strong>Where:</strong> Lumbini World School</p>
+              <div className="mt-4 text-center">
+                <p className="text-3xl md:text-4xl font-extrabold text-primary font-heading mb-2">
+                  Venue — Lumbini World School
+                </p>
+
+                <a
+                  href="https://www.google.com/maps/dir/Lumbini+World+School,+Tilottama/Tilottama+32903/@27.6149174,83.4754816,14.82z/data=!4m13!4m12!1m5!1m1!1s0x39969b1c4e081619:0xa390707f6f2be4bf!2m2!1d83.466295!2d27.5793586!1m5!1m1!1s0x39969b1c4e081619:0xa390707f6f2be4bf!2m2!1d83.466295!2d27.5793586?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-orange-500 hover:underline"
+                >
+                  <MapPin className="w-5 h-5" />
+                  Open in Google Maps
+                </a>
               </div>
             </div>
           </div>
