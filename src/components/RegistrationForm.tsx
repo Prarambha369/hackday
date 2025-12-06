@@ -117,13 +117,16 @@ const RegistrationForm = ({ open, onOpenChange }: RegistrationFormProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto border-4 border-foreground">
-        <DialogHeader>
+          <DialogHeader>
           <DialogTitle className="text-3xl font-black text-primary">
             Register for Butwal Hack
           </DialogTitle>
           <DialogDescription>
             Fill in your details to secure your spot at Nepal's premier 12-hour
             hackathon!
+            <div className="mt-3 text-sm text-foreground">
+              <strong>Venue:</strong> Lumbini World School
+            </div>
           </DialogDescription>
         </DialogHeader>
 
