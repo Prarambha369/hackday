@@ -72,6 +72,18 @@ const Schedule = () => {
             <p className="text-lg text-muted-foreground">
               Detailed schedule to be revealed soon. Stay tuned!
             </p>
+            <div className="mt-6">
+              <a
+                href="https://events.mlh.io/events/13395-hackday-butwal"
+                target="_blank"
+                rel="noreferrer"
+                className="block w-full md:inline-block"
+              >
+                <Button size="lg" className="w-full md:w-auto transform rotate-1">
+                  Register for HackDay Butwal
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </div>

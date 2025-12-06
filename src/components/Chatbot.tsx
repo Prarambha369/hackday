@@ -14,7 +14,8 @@ const Chatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hi! I'm your Hack Day assistant. Ask me anything about the event!",
+      content:
+        "Hello! 👋 Welcome to HackDay Butwal. Ask me anything about the event, rules, venue, or registration!",
     },
   ]);
   const [input, setInput] = useState("");
@@ -49,17 +50,65 @@ const Chatbot = () => {
         { role: "assistant", content: data.response },
       ]);
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error invoking chat function, using local fallback:", error);
+      const fallback = getFallbackReply([...messages, userMessage]);
       setMessages((prev) => [
         ...prev,
-        {
-          role: "assistant",
-          content: "Sorry, I encountered an error. Please try again.",
-        },
+        { role: "assistant", content: fallback },
       ]);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  // Local fallback replies for development when the server function or AI key isn't available.
+  const getFallbackReply = (allMessages: Message[]) => {
+    const lastUser = [...allMessages].reverse().find((m) => m.role === "user");
+    const text = (lastUser?.content || "").toLowerCase();
+
+    // Greetings
+    if (/\b(hello|hi|namaste)\b/.test(text)) {
+      return "Hello! 👋 Welcome to HackDay Butwal. Ask me anything about the event, rules, venue, or registration!";
+    }
+
+    if (text.includes("when") && text.includes("event")) {
+      return "HackDay Butwal is on 17 Jan, 2026.";
+    }
+
+    if (text.includes("how long") || text.includes("duration") || text.includes("hours")) {
+      return "The hackathon lasts 10 hours. You have 10 hours to plan, build, and submit your project.";
+    }
+
+    if (text.includes("where") || text.includes("venue") || text.includes("lumbini") || text.includes("butwal")) {
+      return "The hackathon will take place at Lumbini World School, Butwal.";
+    }
+
+    if (text.includes("register") || text.includes("sign up") || text.includes("registration")) {
+      return "You can register online here: https://events.mlh.io/events/13395-hackday-butwal 📝";
+    }
+
+    if (text.includes("team") || text.includes("members") || text.includes("how many")) {
+      return "Teams can have 1–3 members. Maximum 3 participants per team.";
+    }
+
+    if (text.includes("rule") || text.includes("code of conduct") || text.includes("rules")) {
+      return "Special rules are mentioned in the Code of Conduct on the event page: https://events.mlh.io/events/13395-hackday-butwal";
+    }
+
+    if (text.includes("prize") || text.includes("prizes") || text.includes("certificate") || text.includes("swag")) {
+      return "Participants can win swags and many more exciting prizes at HackDay Butwal!";
+    }
+
+    if (text.includes("mentor") || text.includes("workshop")) {
+      return "Mentors and workshops will be announced soon to guide participants during the event.";
+    }
+
+    if (text.includes("food") || text.includes("facility") || text.includes("facilities")) {
+      return "Yes! Food and other facilities will be free for all participants.";
+    }
+
+    // Default redirect for unrelated questions
+    return "I'm here to assist you with HackDay Butwal details only. Please ask about the event, venue, rules, or teams!";
   };
 
   return (
@@ -129,7 +178,7 @@ const Chatbot = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && sendMessage()}
-                placeholder="Ask about the event..."
+                placeholder="Ask me about HackDay Butwal..."
                 className="flex-1 border-2 border-foreground"
                 disabled={isLoading}
               />
