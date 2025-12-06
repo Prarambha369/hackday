@@ -27,7 +27,7 @@ const Sponsors = () => {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-wrap justify-center gap-12">
             {[
-              { src: '/1.jpg', label: 'Bronze Sponsor' },
+              { src: '/1.png', label: 'Bronze Sponsor' },
               { src: '/7.jpg', label: 'EyeCare Partner' },
               { src: '/2.jpg', label: 'Event Partner' },
               { src: '/4.jpg', label: 'Venue Partner' },
@@ -70,4 +70,3 @@ const Sponsors = () => {
 };
 
 export default Sponsors;
-                    <img src="/2.jpg" alt="Event Partner" className="w-full h-full object-cover rounded-full" />
