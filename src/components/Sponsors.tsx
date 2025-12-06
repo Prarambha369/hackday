@@ -28,7 +28,7 @@ const Sponsors = () => {
           <div className="flex flex-wrap justify-center gap-12">
             {[
               { src: '/1.png', label: 'Bronze Sponsor' },
-              { src: '/7.jpg', label: 'EyeCare Partner' },
+              { src: '/6.png', label: 'EyeCare Partner' },
               { src: '/2.jpg', label: 'Event Partner' },
               { src: '/3.png', label: 'Venue Partner' },
               { src: '/4.png', label: 'Work Space Partner' },
