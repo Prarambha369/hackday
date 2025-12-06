@@ -31,7 +31,7 @@ const Sponsors = () => {
               { src: '/7.jpg', label: 'EyeCare Partner' },
               { src: '/2.jpg', label: 'Event Partner' },
               { src: '/3.png', label: 'Venue Partner' },
-              { src: '/6.jpg', label: 'Work Space Partner' },
+              { src: '/4.png', label: 'Work Space Partner' },
               { src: '/WhatsApp Image 2025-11-28 at 23.00.42.jpeg', label: 'Education Partner' },
               { src: '/WhatsApp Image 2025-11-28 at 22.55.28 (1).jpeg', label: 'Domain Partner' },
               { src: '/2.png', label: 'Theater Partner' },
