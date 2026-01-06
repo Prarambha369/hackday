@@ -19,51 +19,80 @@ const Sponsors = () => {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-wrap justify-center gap-12">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((i) => (
-              <div key={i} className="flex flex-col items-center gap-2">
-                <div
-                  className={`rounded-full flex items-center justify-center transition-all hover:bg-primary/20 overflow-hidden ${i === 1 ? 'w-48 h-48' : 'w-32 h-32'}`}
-                  style={(i >=1 && i <=8) ? { backgroundColor: 'transparent' } : undefined}
-                >
-                  {i === 1 ? (
-                    <img src="/1.png" alt="Bronze Sponsor" className="w-3/4 h-3/4 object-contain rounded-full" />
-                  ) : i === 2 ? (
-                    <img src="/6.png" alt="EyeCare Partner" className="w-full h-full object-cover rounded-full" />
-                  ) : i === 3 ? (
-                    <img src="/2.jpg" alt="Event Partner" className="w-full h-full object-cover rounded-full" />
-                  ) : i === 4 ? (
-                    <img src="/3.png" alt="Venue Partner" className="w-full h-full object-cover rounded-full" />
-                  ) : i === 5 ? (
-                    <img src="/4.png" alt="Work Space Partner" className="w-full h-full object-cover rounded-full" />
-                  ) : i === 6 ? (
-                    <img src="/8.png" alt="Education Partner" className="w-full h-full object-cover rounded-full" />
-                  ) : i === 7 ? (
-                    <img src="/9.png" alt="Domain Partner" className="w-full h-full object-cover rounded-full" />
-                  ) : i === 8 ? (
-                    <img src="/2.png" alt="Theater Partner" className="w-full h-full object-cover rounded-full" />
-                  ) : i === 9 ? (
-                    <img src="/5.png" alt="Delivery Partner" className="w-full h-full object-cover rounded-full" />
-                  ) : i === 10 ? (
-                    <img src="/10.png" alt="Out Reach Partner" className="w-full h-full object-cover rounded-full" />
-                  ) : (
-                    <>
-                      <div className="absolute inset-0 rounded-full bg-primary/10" />
-                      <span className="text-foreground font-bold text-center text-sm px-4 relative z-10">Sponsor {i}</span>
-                    </>
-                  )}
-                </div>
-                {i === 1 && <span className="text-foreground font-semibold text-sm">Bronze Sponsor</span>}
-                {i === 2 && <span className="text-foreground font-semibold text-sm">EyeCare Partner</span>}
-                {i === 3 && <span className="text-foreground font-semibold text-sm">Event Partner</span>}
-                {i === 4 && <span className="text-foreground font-semibold text-sm">Venue Partner</span>}
-                {i === 5 && <span className="text-foreground font-semibold text-sm">Work Space Partner</span>}
-                {i === 6 && <span className="text-foreground font-semibold text-sm">Education Partner</span>}
-                {i === 7 && <span className="text-foreground font-semibold text-sm">Domain Partner</span>}
-                {i === 8 && <span className="text-foreground font-semibold text-sm">Theater Partner</span>}
-                {i === 9 && <span className="text-foreground font-semibold text-sm">Delivery Partner</span>}
-                {i === 10 && <span className="text-foreground font-semibold text-sm">Out Reach Partner</span>}
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col items-center gap-10">
+            {[
+              [1],
+              [2, 3],
+              [4, 5, 6],
+              [7, 8, 9, 10],
+              [11, 12, 13],
+              [14, 15, 16],
+            ].map((row, rIdx) => (
+              <div key={rIdx} className="flex justify-center gap-10">
+                {row.map((i) => (
+                  <div key={i} className="flex flex-col items-center gap-2">
+                    <div
+                      className={`flex items-center justify-center transition-all hover:bg-primary/20 overflow-hidden ${i === 1 ? 'rounded-full w-56 h-56 md:w-64 md:h-64' : i === 15 ? 'rounded-md w-44 h-28 md:w-48 md:h-32' : 'rounded-full w-36 h-36 md:w-40 md:h-40'}`}
+                      style={(i >= 1 && i <= 8) ? { backgroundColor: 'transparent' } : undefined}
+                    >
+                      {i === 1 ? (
+                        <img src="/WhatsApp%20Image%202026-01-03%20at%2022.22.15.jpeg" alt="Title Sponsor" className="w-3/4 h-3/4 object-contain rounded-full" />
+                      ) : i === 2 ? (
+                        <img src="/WhatsApp%20Image%202026-01-03%20at%2022.22.16.jpeg" alt="Silver Sponsor" className="w-full h-full object-cover rounded-full" />
+                      ) : i === 3 ? (
+                        <img src="/1.jpg" alt="Bronze Sponsor" className="w-full h-full object-cover rounded-full" />
+                      ) : i === 4 ? (
+                        <img src="/6.png" alt="EyeCare Partner" className="w-full h-full object-cover rounded-full" />
+                      ) : i === 5 ? (
+                        <img src="/3.jpg" alt="Theater Partner" className="w-full h-full object-cover rounded-full" />
+                      ) : i === 6 ? (
+                        <img src="/12.jpg" alt="Sports Partner" className="w-full h-full object-cover rounded-full" />
+                      ) : i === 7 ? (
+                        <img src="/9.png" alt="Domain Partner" className="w-full h-full object-cover rounded-full" />
+                      ) : i === 8 ? (
+                        <img src="/14.jpg" alt="Event Partner" className="w-full h-full object-cover rounded-full" />
+                      ) : i === 9 ? (
+                        <img src="/2.jpg" alt="Event Partner" className="w-full h-full object-cover rounded-full" />
+                      ) : i === 10 ? (
+                        <img src="/4.jpg" alt="Venue Partner" className="w-full h-full object-cover rounded-full" />
+                      ) : i === 11 ? (
+                        <img src="/8.png" alt="Education Partner" className="w-full h-full object-cover rounded-full" />
+                      ) : i === 12 ? (
+                        <img src="/6.jpg" alt="Work Space Partner" className="w-full h-full object-cover rounded-full" />
+                      ) : i === 13 ? (
+                        <img src="/WhatsApp%20Image%202025-11-28%20at%2022.56.09%20%281%29.jpeg" alt="Outreach Partner" className="w-full h-full object-cover rounded-full" />
+                      ) : i === 14 ? (
+                        <img src="/609212630_1436300724656246_4544358761731091320_n.jpg" alt="Community Partner" className="w-full h-full object-cover rounded-full" />
+                      ) : i === 15 ? (
+                        <img src="/WhatsApp%20Image%202026-01-04%20at%2021.16.43.jpeg" alt="Beverage Partner" className="w-full h-full object-cover rounded-md" />
+                      ) : i === 16 ? (
+                        <img src="/5.jpg" alt="Food Delivery Partner" className="w-full h-full object-cover rounded-full" />
+                      ) : (
+                        <>
+                          <div className="absolute inset-0 rounded-full bg-primary/10" />
+                          <span className="text-foreground font-bold text-center text-sm px-4 relative z-10">Sponsor {i}</span>
+                        </>
+                      )}
+                    </div>
+                    {i === 1 && <span className="text-foreground font-semibold text-sm">Title Sponsor</span>}
+                    {i === 2 && <span className="text-foreground font-semibold text-sm">Silver Sponsor</span>}
+                    {i === 3 && <span className="text-foreground font-semibold text-sm">Bronze Sponsor</span>}
+                    {i === 4 && <span className="text-foreground font-semibold text-sm">EyeCare Partner</span>}
+                    {i === 5 && <span className="text-foreground font-semibold text-sm">Theater Partner</span>}
+                    {i === 6 && <span className="text-foreground font-semibold text-sm">Sports Partner</span>}
+                    {i === 7 && <span className="text-foreground font-semibold text-sm">Domain Partner</span>}
+                    {i === 8 && <span className="text-foreground font-semibold text-sm">Event Partner</span>}
+                    {i === 9 && <span className="text-foreground font-semibold text-sm">Event Partner</span>}
+                    {i === 10 && <span className="text-foreground font-semibold text-sm">Venue Partner</span>}
+                    {i === 11 && <span className="text-foreground font-semibold text-sm">Education Partner</span>}
+                    {i === 12 && <span className="text-foreground font-semibold text-sm">Work Space Partner</span>}
+                    {i === 13 && <span className="text-foreground font-semibold text-sm">Outreach Partner</span>}
+                    {i === 14 && <span className="text-foreground font-semibold text-sm">Community Partner</span>}
+                    {i === 15 && <span className="text-foreground font-semibold text-sm">Beverage Partner</span>}
+                    {i === 16 && <span className="text-foreground font-semibold text-sm">Food Delivery Partner</span>}
+                  </div>
+                ))}
               </div>
             ))}
           </div>
