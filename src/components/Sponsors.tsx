@@ -51,7 +51,7 @@ const Sponsors = () => {
                       ) : i === 7 ? (
                         <img src="/9.png" alt="Domain Partner" className="w-full h-full object-cover rounded-full" />
                       ) : i === 8 ? (
-                        <img src="/14.jpg" alt="AI Partner" className="w-full h-full object-cover rounded-full" />
+                        <img src="/14.jpg" alt="Event Partner" className="w-full h-full object-cover rounded-full" />
                       ) : i === 9 ? (
                         <img src="/2.jpg" alt="Event Partner" className="w-full h-full object-cover rounded-full" />
                       ) : i === 10 ? (
@@ -82,7 +82,7 @@ const Sponsors = () => {
                     {i === 5 && <span className="text-foreground font-semibold text-sm">Theater Partner</span>}
                     {i === 6 && <span className="text-foreground font-semibold text-sm">Sports Partner</span>}
                     {i === 7 && <span className="text-foreground font-semibold text-sm">Domain Partner</span>}
-                    {i === 8 && <span className="text-foreground font-semibold text-sm">AI Partner</span>}
+                    {i === 8 && <span className="text-foreground font-semibold text-sm">Event Partner</span>}
                     {i === 9 && <span className="text-foreground font-semibold text-sm">Event Partner</span>}
                     {i === 10 && <span className="text-foreground font-semibold text-sm">Venue Partner</span>}
                     {i === 11 && <span className="text-foreground font-semibold text-sm">Education Partner</span>}
