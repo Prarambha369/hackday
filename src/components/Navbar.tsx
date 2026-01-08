@@ -23,7 +23,7 @@ const Navbar = () => {
     { label: "Schedule", href: "#schedule" },
     { label: "Challenges", href: "#challenges" },
     { label: "Sponsors", href: "#sponsors" },
-    { label: "FAQ", href: "#faq" },
+    
     { label: "Code of Conduct", href: "/cod" },
   ];
 

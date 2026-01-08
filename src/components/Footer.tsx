@@ -43,11 +43,7 @@ const Footer = () => {
                   Team
                 </a>
               </li>
-              <li>
-                <a href="#faq" className="text-muted-foreground hover:text-primary transition-colors">
-                  FAQ
-                </a>
-              </li>
+              
             </ul>
           </div>
 
@@ -84,21 +80,14 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* MLH Badge Placeholder */}
-        <div className="border-t border-border pt-8 mb-8 text-center">
-          <div className="inline-block bg-muted px-6 py-3 rounded-lg">
-            <p className="text-sm text-muted-foreground">
-              MLH Official Event Badge (Pending Approval)
-            </p>
-          </div>
-        </div>
+        {/* MLH Badge removed (pending approval text removed) */}
 
         {/* Organizer & Event Mentions */}
         <div className="text-center mb-6">
-          <p className="text-sm text-foreground">Butwal Hacks</p>
-          <p className="text-sm text-foreground">Event Organiser Butwal Hacks</p>
-          <p className="text-sm text-foreground">Butwal Hacks</p>
-          <p className="text-sm text-foreground">Event by Mlh x Google Gemini</p>
+          <p className="text-sm text-foreground font-bold">Butwal Hacks</p>
+          <p className="text-sm text-foreground font-bold">Event Organiser Butwal Hacks</p>
+          <p className="text-sm text-foreground font-bold">Butwal Hacks</p>
+          <p className="text-sm text-foreground font-bold">Event by Mlh x Google Gemini</p>
         </div>
 
         {/* Copyright */}
