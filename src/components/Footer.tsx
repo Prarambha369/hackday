@@ -58,7 +58,7 @@ const Footer = () => {
                 <Mail className="w-4 h-4" />
                 support@butwalhacks.com
               </a>
-              <div className="flex gap-3">
+              <div className="flex gap-3 items-center">
                 <a
                   href="https://www.instagram.com/direct/t/758290143656900/"
                   target="_blank"
@@ -74,6 +74,14 @@ const Footer = () => {
                   className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all"
                 >
                   <Github className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://news.mlh.io/major-league-hacking-google-cloud-partnership-10-22-2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-muted hover:bg-primary flex items-center justify-center transition-all overflow-hidden"
+                >
+                  <img src="/13.svg" alt="MLH Article" className="w-8 h-8 object-contain" />
                 </a>
               </div>
             </div>
