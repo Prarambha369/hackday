@@ -43,11 +43,7 @@ const Footer = () => {
                   Team
                 </a>
               </li>
-              <li>
-                <a href="#faq" className="text-muted-foreground hover:text-primary transition-colors">
-                  FAQ
-                </a>
-              </li>
+              
             </ul>
           </div>
 
@@ -62,7 +58,7 @@ const Footer = () => {
                 <Mail className="w-4 h-4" />
                 support@butwalhacks.com
               </a>
-              <div className="flex gap-3">
+              <div className="flex gap-3 items-center">
                 <a
                   href="https://www.instagram.com/direct/t/758290143656900/"
                   target="_blank"
@@ -79,26 +75,27 @@ const Footer = () => {
                 >
                   <Github className="w-5 h-5" />
                 </a>
+                <a
+                  href="https://news.mlh.io/major-league-hacking-google-cloud-partnership-10-22-2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-muted hover:bg-primary flex items-center justify-center transition-all overflow-hidden"
+                >
+                  <img src="/13.svg" alt="MLH Article" className="w-8 h-8 object-contain" />
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* MLH Badge Placeholder */}
-        <div className="border-t border-border pt-8 mb-8 text-center">
-          <div className="inline-block bg-muted px-6 py-3 rounded-lg">
-            <p className="text-sm text-muted-foreground">
-              MLH Official Event Badge (Pending Approval)
-            </p>
-          </div>
-        </div>
+        {/* MLH Badge removed (pending approval text removed) */}
 
         {/* Organizer & Event Mentions */}
         <div className="text-center mb-6">
-          <p className="text-sm text-foreground">Butwal Hacks</p>
-          <p className="text-sm text-foreground">Event Organiser Butwal Hacks</p>
-          <p className="text-sm text-foreground">Butwal Hacks</p>
-          <p className="text-sm text-foreground">Event by Mlh x Google Gemini</p>
+          <p className="text-sm text-foreground font-bold">Butwal Hacks</p>
+          <p className="text-sm text-foreground font-bold">Event Organiser Butwal Hacks</p>
+          <p className="text-sm text-foreground font-bold">Butwal Hacks</p>
+          <p className="text-sm text-foreground font-bold">Event by Mlh x Google Gemini</p>
         </div>
 
         {/* Copyright */}

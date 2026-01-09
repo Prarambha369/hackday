@@ -19,10 +19,10 @@ const Community = () => {
             size="lg" 
             variant="outline" 
             className="gap-2"
-            onClick={() => window.open('https://www.instagram.com/direct/t/758290143656900/', '_blank')}
+            onClick={() => window.open('https://www.instagram.com/direct/t/1401193344912939/', '_blank')}
           >
             <Instagram className="w-5 h-5" />
-            Follow on Instagram
+            Join the Community
           </Button>
         </div>
       </div>

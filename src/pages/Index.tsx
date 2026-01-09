@@ -7,9 +7,7 @@ import Workshops from "@/components/Workshops";
 import Sponsors from "@/components/Sponsors";
 import Team from "@/components/Team";
 import Community from "@/components/Community";
-import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
-import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
   return (
@@ -23,9 +21,7 @@ const Index = () => {
       <Sponsors />
       <Team />
       <Community />
-      <FAQ />
       <Footer />
-      <Chatbot />
     </div>
   );
 };

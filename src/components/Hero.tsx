@@ -121,7 +121,10 @@ const Hero = () => {
           </p>
 
           <p className="text-base md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Join Butwal Hack, Nepal's premier hackathon in Butwal! 10 hours of web development, AI, mobile apps, and innovation. Student hackathon featuring MHL challenges. Unite with Nepal's brightest student innovators and builders.
+            Join Hack Day Butwal, Nepal’s premier student hackathon in Butwal!
+            10 hours of web development and innovation.
+            A student-led hackathon featuring MLH challenges.
+            Unite with Nepal’s brightest student innovators and builders.
           </p>
 
           {/* CTA Buttons - Non-uniform */}

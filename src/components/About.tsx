@@ -12,9 +12,9 @@ const About = () => {
 
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="relative inline-block mb-12">
+            <div className="relative inline-block mb-12">
             <h2 className="text-4xl md:text-6xl font-black text-foreground font-heading transform -rotate-2">
-              About Butwal Hack
+              About HackDay Butwal
             </h2>
             <svg className="absolute -bottom-3 left-4 w-3/4 h-4" viewBox="0 0 200 12" preserveAspectRatio="none">
               <path d="M0,7 Q50,3 100,8 T200,6" stroke="hsl(var(--primary))" strokeWidth="4" fill="none" strokeLinecap="round"/>
@@ -23,11 +23,17 @@ const About = () => {
           
           <div className="mb-12 transform rotate-1">
             <Card className="p-10 border-4 border-foreground bg-card shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
-              <p className="text-xl md:text-2xl text-foreground leading-relaxed font-medium">
-                Butwal Hack is a <span className="font-black text-primary">web development & innovation hackathon</span> in Butwal, Nepal, 
-                inspired by <span className="font-black text-primary">Major League Hacking (MHL)</span>. This student hackathon unites <span className="font-black text-primary">creators, developers, 
-                and innovators</span> from across Nepal for web development challenges, AI projects, mobile app development, and more. Build impactful solutions, gain experience, and connect with Nepal's tech community! 🚀
-              </p>
+              <div className="text-xl md:text-2xl text-foreground leading-relaxed font-medium space-y-4">
+                <p>
+                  Hack Day Butwal is a student-led hackathon organized in Butwal, Nepal, under the global network of MLH (Major League Hacking) and supported by tech partners like Google Gemini.
+                </p>
+                <p>
+                  It brings together students, developers, and innovators to collaborate, build creative projects, learn new technologies, and showcase their skills.
+                </p>
+                <p>
+                  Unlike most tech events centered in Kathmandu, Hack Day Butwal focuses on empowering students outside the capital by providing access to opportunities that are often hard to reach.
+                </p>
+              </div>
             </Card>
           </div>
 
