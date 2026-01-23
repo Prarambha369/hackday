@@ -1,0 +1,12 @@
+[
+  {
+    "name": "MLH",
+    "logo": "/svg/mlh.svg",
+    "website": "https://mlh.io"
+  },
+  {
+    "name": "Google Gemini HackDays",
+    "logo": "/svg/google-gemini.svg",
+    "website": "https://developers.google.com/gemini"
+  }
+]

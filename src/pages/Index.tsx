@@ -5,7 +5,10 @@ import Schedule from "@/components/Schedule";
 import Challenges from "@/components/Challenges";
 import Workshops from "@/components/Workshops";
 import Sponsors from "@/components/Sponsors";
+import PrizesData from "@/components/PrizesData";
+import JudgesData from "@/components/JudgesData";
 import Team from "@/components/Team";
+import TeamGallery from "@/components/TeamGallery";
 import Community from "@/components/Community";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -21,7 +24,10 @@ const Index = () => {
       <Challenges />
       <Workshops />
       <Sponsors />
+      <PrizesData />
+      <JudgesData />
       <Team />
+      <TeamGallery />
       <Community />
       <FAQ />
       <Footer />

@@ -1,0 +1,14 @@
+[
+  {
+    "team_name": "Team Alpha",
+    "github_repo": "https://github.com/Butwal-Hacks/team-alpha",
+    "devpost_link": "https://butwal.devpost.com/project/alpha",
+    "project_title": "Smart Campus App"
+  },
+  {
+    "team_name": "Team Beta",
+    "github_repo": "https://github.com/Butwal-Hacks/team-beta",
+    "devpost_link": "https://butwal.devpost.com/project/beta",
+    "project_title": "AI Attendance Tracker"
+  }
+]
