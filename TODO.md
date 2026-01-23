@@ -1,0 +1,6 @@
+- Update homepage content in content/home.json
+- Add about/contact sections
+- Update events.json to mark event status
+- Update teams.json with GitHub & Devpost links
+- Ensure all sponsor logos are SVG
+- Deploy updates to staging or production
