@@ -126,7 +126,7 @@ SUGGESTED SCHEDULE (use NPT when presenting times):
 - 09:00 — Opening Ceremony
 - 10:00 — Hacking Begins
 - 13:00 — Lunch
-- 15:00 — Workshops & Mentoring
+- 15:00 — Mentoring
 - 17:30 — Project Submission Deadline
 - 18:00 — Closing & Awards
 
@@ -137,11 +137,11 @@ ELIGIBILITY & TEAMS:
 THEME:
 - "Creativity with caffeine ☕" (Devpost tags: Web, Low/No Code, Beginner Friendly)
 
-JUDGING CRITERIA (from Devpost):
-- Creativity
-- Usefulness
-- Clarity
-- How well it works
+JUDGING (from Devpost):
+- Criteria: Problem-Solving, Designing, Presentation, Creativity, Concept
+- Judges: Vishal Shrestha (iCAN Education Services), Gaurav Giri (NotionKec), Madhav Poudel (CSIT Association of Nepal, Rupandehi)
+
+SPONSORS & PARTNERS (from Devpost): Al-Qayyom Biryani, Nayan Eye Care Center, Major League Hacking, Lumbini World School, Notion, GitHub Education, gen.xyz, Friends Cinema, Bhoj Deals, GDG Kathmandu, Google Gemini, iCAN Education Services, Tilottama Municipality, Lumbini Lions, CSIT Association of Nepal Rupandehi, CSIT Association of BMC, Singapore Beverages Nepal, 36 Riverside, Al-Habibi
 
 LOGISTICS & WHAT TO BRING:
 - Laptop, chargers, any hardware you intend to use, and student ID

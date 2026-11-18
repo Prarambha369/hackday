@@ -35,10 +35,13 @@ const Sponsors = () => {
                   decoding="async"
                   width={500}
                   height={500}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full ${sponsor.contain ? "object-contain p-2" : "object-cover"}`}
                 />
               </div>
-              <span className="text-foreground font-semibold text-sm text-center max-w-[10rem]">{sponsor.role}</span>
+              <span className="text-center max-w-[10rem] leading-tight">
+                <span className="block text-foreground font-semibold text-sm">{sponsor.name}</span>
+                <span className="block text-muted-foreground text-xs">{sponsor.role}</span>
+              </span>
             </li>
           ))}
         </ul>

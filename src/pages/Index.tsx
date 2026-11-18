@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Schedule from "@/components/Schedule";
 import Challenges from "@/components/Challenges";
-import Workshops from "@/components/Workshops";
+import Judges from "@/components/Judges";
 import Sponsors from "@/components/Sponsors";
 import Team from "@/components/Team";
 import Community from "@/components/Community";
@@ -19,7 +19,7 @@ const Index = () => {
       <About />
       <Schedule />
       <Challenges />
-      <Workshops />
+      <Judges />
       <Sponsors />
       <Team />
       <Community />

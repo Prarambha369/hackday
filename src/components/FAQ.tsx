@@ -17,7 +17,7 @@ const FAQ = () => {
     {
       question: "Do I need prior experience?",
       answer:
-        "Not at all! HackDay Butwal is designed for hackers of all skill levels. We'll have workshops for beginners and mentors to help you throughout the event.",
+        "Not at all! HackDay Butwal is designed for hackers of all skill levels. Mentors were on hand to help teams throughout the event.",
     },
     {
       question: "What's the team size requirement?",
@@ -27,7 +27,7 @@ const FAQ = () => {
     {
       question: "What's the judging process?",
       answer:
-        "Projects will be judged based on innovation, technical complexity, design, and impact. You'll present your project in a 3-minute demo to our panel of judges.",
+        "Projects were judged on problem-solving, design, presentation, creativity, and concept. At the end of the day every team presented what they built to the judges.",
     },
     {
       question: "What should I bring?",
