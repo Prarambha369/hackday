@@ -1,56 +1,65 @@
-# Project
+# HackDay Butwal
 
-## Project info
+Website for **HackDay Butwal**, a Major League Hacking (MLH) student hackathon organized by
+[Butwal Hacks](https://www.butwalhacks.com) at Lumbini World School, Butwal, Nepal.
 
-This repository contains the source for the Butwal Hack website and web app.
+- Live: https://hackday-navy.vercel.app
+- MLH listing: https://events.mlh.io/events/13395-hackday-butwal
+- Devpost: https://butwal.devpost.com
 
-## How to edit and run locally
+## Stack
 
-There are several ways to edit and run this project locally.
+Vite + React 18 + TypeScript, Tailwind CSS, shadcn/ui, React Router. An optional Supabase
+Edge Function powers the chat assistant. Deployed on Vercel.
 
-**Use your preferred IDE**
-
-Clone this repository and run the project locally:
+## Getting started
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
 npm install
-
-# Step 4: Start the development server.
-npm run dev
+npm run dev        # http://localhost:8080
+npm run build      # production build → dist/
+npm run lint
 ```
 
-**Edit a file directly in GitHub**
+### Environment variables (optional)
 
-- Navigate to the desired file(s.
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit them.
+Copy them into `.env.local` (git-ignored). Without them the site still works; only the chat
+widget is hidden.
 
-**Use GitHub Codespaces**
+| Variable | Purpose |
+| --- | --- |
+| `VITE_SUPABASE_URL` | Supabase project URL for the chat assistant |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | Supabase publishable (anon) key |
 
-- Click the green "Code" button on the repo page and select the "Codespaces" tab.
-- Create a new Codespace to edit and run the project in the cloud.
+On Vercel, set these under **Project → Settings → Environment Variables**, then redeploy.
 
-## What technologies are used for this project?
+## Project structure
 
-This project is built with:
+```
+public/
+  sponsors/            Sponsor logos (one file per sponsor, kebab-case names)
+  favicon.png, robots.txt, sitemap.xml
+src/
+  data/
+    event.ts           Event name, date, times, venue, links, contacts. Edit this first.
+    sponsors.ts        Sponsor list (name, role, logo path)
+  components/          Page sections (Hero, About, Schedule, Sponsors, Team, FAQ, ...)
+  components/ui/       shadcn/ui primitives (generated; avoid hand-editing)
+  pages/               Routes: Index (/), CodeOfConduct (/cod), NotFound
+  integrations/supabase/  Supabase client (null when env vars are missing)
+  assets/              Bundled images (hackday-logo.png, butwal-hacks-mark.png)
+supabase/
+  functions/chat/      Edge Function for the chat assistant
+  migrations/          Database migrations
+vercel.json            SPA rewrite so deep links like /cod don't 404
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Common edits
 
-## How to deploy
+- **Change event details:** edit `src/data/event.ts`. Also update the JSON-LD block in `index.html`.
+- **Add a sponsor:** put a square logo (500×500 recommended) in `public/sponsors/` and add an
+  entry to `src/data/sponsors.ts`. Set `featured: true` to show it larger.
 
-Deploy according to your chosen provider (Vercel, Netlify, Cloudflare Pages, or similar). Build output lives in the `dist/` folder after running `npm run build`.
+## License
 
-## Custom domain
-
-Connect a custom domain via your hosting provider following their instructions.
+MIT. See [LICENSE](LICENSE).

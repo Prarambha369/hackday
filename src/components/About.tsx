@@ -14,7 +14,7 @@ const About = () => {
         <div className="max-w-5xl mx-auto">
           <div className="relative inline-block mb-12">
             <h2 className="text-4xl md:text-6xl font-black text-foreground font-heading transform -rotate-2">
-              About Butwal Hack
+              About HackDay Butwal
             </h2>
             <svg className="absolute -bottom-3 left-4 w-3/4 h-4" viewBox="0 0 200 12" preserveAspectRatio="none">
               <path d="M0,7 Q50,3 100,8 T200,6" stroke="hsl(var(--primary))" strokeWidth="4" fill="none" strokeLinecap="round"/>
@@ -24,8 +24,8 @@ const About = () => {
           <div className="mb-12 transform rotate-1">
             <Card className="p-10 border-4 border-foreground bg-card shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
               <p className="text-xl md:text-2xl text-foreground leading-relaxed font-medium">
-                Butwal Hack is a <span className="font-black text-primary">web development & innovation hackathon</span> in Butwal, Nepal, 
-                inspired by <span className="font-black text-primary">Major League Hacking (MHL)</span>. This student hackathon unites <span className="font-black text-primary">creators, developers, 
+                HackDay Butwal is a <span className="font-black text-primary">web development & innovation hackathon</span> in Butwal, Nepal, 
+                inspired by <span className="font-black text-primary">Major League Hacking (MLH)</span>. This student hackathon unites <span className="font-black text-primary">creators, developers, 
                 and innovators</span> from across Nepal for web development challenges, AI projects, mobile app development, and more. Build impactful solutions, gain experience, and connect with Nepal's tech community! 🚀
               </p>
             </Card>

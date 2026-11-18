@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Butwal Hack</h3>
+            <h3 className="text-xl font-bold mb-4">HackDay Butwal</h3>
             <p className="text-sm text-muted-foreground">
               A student-focused hackathon inspired by Major League Hacking,
               bringing together Nepal's brightest innovators.
@@ -104,7 +104,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="text-center text-sm text-muted-foreground">
           <p>
-            © 2025 Butwal Hack | Inspired by{" "}
+            © 2026 HackDay Butwal by Butwal Hacks | Inspired by{" "}
             <a
               href="https://mlh.io"
               target="_blank"

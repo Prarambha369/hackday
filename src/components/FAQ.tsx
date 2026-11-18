@@ -11,12 +11,12 @@ const FAQ = () => {
   const faqs = [
     {
       question: "Is it free?",
-      answer: "Yes!! It's free under MHL.",
+      answer: "Yes!! It's free: it's an MLH event.",
     },
     {
       question: "Do I need prior experience?",
       answer:
-        "Not at all! Butwal Hack is designed for hackers of all skill levels. We'll have workshops for beginners and mentors to help you throughout the event.",
+        "Not at all! HackDay Butwal is designed for hackers of all skill levels. We'll have workshops for beginners and mentors to help you throughout the event.",
     },
     {
       question: "Is it free?",
@@ -36,7 +36,7 @@ const FAQ = () => {
     {
       question: "What should I bring?",
       answer:
-        "Bring your laptop, chargers, any hardware you want to use, and your student ID. Come prepared for a full 12-hour innovation marathon!",
+        "Bring your laptop, chargers, any hardware you want to use, and your student ID. Come prepared for a full 10-hour innovation marathon!",
     },
     {
       question: "What if I have more questions?",
@@ -62,7 +62,7 @@ const FAQ = () => {
             </svg>
           </div>
           <p className="text-lg md:text-xl text-muted-foreground font-medium">
-            Frequently Asked Questions about Butwal Hack, Nepal's web development and student innovation hackathon 💡
+            Frequently Asked Questions about HackDay Butwal, Nepal's web development and student innovation hackathon 💡
           </p>
         </div>
 

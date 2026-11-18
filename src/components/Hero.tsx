@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Plane, Code2, Zap, Trophy } from "lucide-react";
-import logo from "@/assets/1000015171.png";
+import logo from "@/assets/hackday-logo.png";
+import { EVENT } from "@/data/event";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
@@ -101,7 +102,7 @@ const Hero = () => {
           <div className={`mb-8 flex justify-center transition-all duration-700 ${showLogo ? 'animate-[scale-in_0.5s_ease-out] opacity-100' : 'opacity-0 scale-50'}`}>
             <img
               src={logo}
-              alt="Butwal Hack"
+              alt={EVENT.name}
               className="w-full max-w-md h-auto hover:scale-105 transition-transform duration-300"
             />
           </div>
@@ -121,7 +122,7 @@ const Hero = () => {
           </p>
 
           <p className="text-base md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Join Butwal Hack, Nepal's premier hackathon in Butwal! 10 hours of web development, AI, mobile apps, and innovation. Student hackathon featuring MHL challenges. Unite with Nepal's brightest student innovators and builders.
+            Join {EVENT.name} by {EVENT.organizer}! {EVENT.durationHours} hours of web development, AI, mobile apps, and innovation. A Major League Hacking (MLH) student hackathon. Unite with Nepal's brightest student innovators and builders.
           </p>
 
           {/* CTA Buttons - Non-uniform */}
@@ -129,7 +130,7 @@ const Hero = () => {
             <Button
               size="lg"
               className="text-lg px-10 py-6 font-bold transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1"
-              onClick={() => window.open('https://butwal.devpost.com/', '_blank')}
+              onClick={() => window.open(EVENT.links.devpost, '_blank', 'noopener,noreferrer')}
             >
               Register on Devpost
             </Button>
@@ -139,14 +140,14 @@ const Hero = () => {
               className="text-lg px-10 py-6 font-bold border-4 transform rotate-1 hover:rotate-0 transition-all border-foreground shadow-[6px_6px_0px_0px_hsl(var(--primary))] hover:shadow-[3px_3px_0px_0px_hsl(var(--primary))] hover:translate-x-1 hover:translate-y-1"
               onClick={() => {
                 const event = {
-                  title: "Butwal Hack",
+                  title: EVENT.name,
                   description: "Hackathon - Build, Learn, Win!",
-                  location: "Butwal, Nepal",
-                  startDate: "2026-01-17T08:00:00",
-                  endDate: "2026-01-17T18:00:00"
+                  location: `${EVENT.venue}, ${EVENT.location}`,
+                  startDate: `${EVENT.date}T${EVENT.startTime}`,
+                  endDate: `${EVENT.date}T${EVENT.endTime}`
                 };
 
-                const formatLocal = (iso) => {
+                const formatLocal = (iso: string) => {
                   // iso like YYYY-MM-DDTHH:MM:SS
                   return iso.replace(/[-:]/g, '').split('.')[0];
                 };
@@ -154,16 +155,17 @@ const Hero = () => {
                 const dtStart = formatLocal(event.startDate);
                 const dtEnd = formatLocal(event.endDate);
 
-                const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Butwal Hack//EN\nCALSCALE:GREGORIAN\nBEGIN:VTIMEZONE\nTZID:Asia/Kathmandu\nX-LIC-LOCATION:Asia/Kathmandu\nBEGIN:STANDARD\nDTSTART:19700101T000000\nTZOFFSETFROM:+0545\nTZOFFSETTO:+0545\nTZNAME:NPT\nEND:STANDARD\nEND:VTIMEZONE\nBEGIN:VEVENT\nDTSTART;TZID=Asia/Kathmandu:${dtStart}\nDTEND;TZID=Asia/Kathmandu:${dtEnd}\nSUMMARY:${event.title}\nDESCRIPTION:${event.description}\nLOCATION:${event.location}\nEND:VEVENT\nEND:VCALENDAR`;
+                const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//HackDay Butwal//EN\nCALSCALE:GREGORIAN\nBEGIN:VTIMEZONE\nTZID:Asia/Kathmandu\nX-LIC-LOCATION:Asia/Kathmandu\nBEGIN:STANDARD\nDTSTART:19700101T000000\nTZOFFSETFROM:+0545\nTZOFFSETTO:+0545\nTZNAME:NPT\nEND:STANDARD\nEND:VTIMEZONE\nBEGIN:VEVENT\nDTSTART;TZID=Asia/Kathmandu:${dtStart}\nDTEND;TZID=Asia/Kathmandu:${dtEnd}\nSUMMARY:${event.title}\nDESCRIPTION:${event.description}\nLOCATION:${event.location}\nEND:VEVENT\nEND:VCALENDAR`;
 
                 const blob = new Blob([icsContent], { type: 'text/calendar' });
                 const url = URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 link.href = url;
-                link.download = 'butwal-hack-20260117.ics';
+                link.download = `hackday-butwal-${EVENT.date.replace(/-/g, '')}.ics`;
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
+                URL.revokeObjectURL(url);
               }}
             >
               Add to Calendar
@@ -173,7 +175,7 @@ const Hero = () => {
           {/* Event Info - Tilted Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="bg-card border-4 border-foreground p-6 transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
-              <p className="text-5xl font-black text-primary mb-3 font-heading">10</p>
+              <p className="text-5xl font-black text-primary mb-3 font-heading">{EVENT.durationHours}</p>
               <p className="text-xl font-bold text-foreground">Hours</p>
               <p className="text-sm text-muted-foreground mt-1">Of Innovation</p>
             </div>
