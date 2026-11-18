@@ -4,6 +4,7 @@
  */
 export const EVENT = {
   name: "HackDay Butwal",
+  siteUrl: "https://hackday.butwalhacks.com",
   organizer: "Butwal Hacks",
   organizerUrl: "https://www.butwalhacks.com",
   location: "Butwal, Nepal",

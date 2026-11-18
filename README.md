@@ -3,7 +3,7 @@
 Website for **HackDay Butwal**, a Major League Hacking (MLH) student hackathon organized by
 [Butwal Hacks](https://www.butwalhacks.com) at Lumbini World School, Butwal, Nepal.
 
-- Live: https://hackday-navy.vercel.app
+- Live: https://hackday.butwalhacks.com (also https://hackday-navy.vercel.app)
 - MLH listing: https://events.mlh.io/events/13395-hackday-butwal
 - Devpost: https://butwal.devpost.com
 
@@ -37,6 +37,7 @@ On Vercel, set these under **Project → Settings → Environment Variables**, t
 
 ```
 public/
+  og-image.png         Social share image (1200×630)
   sponsors/            Sponsor logos (one file per sponsor, kebab-case names)
   favicon.png, robots.txt, sitemap.xml
 src/
