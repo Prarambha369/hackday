@@ -5,9 +5,11 @@ import type { SponsorTier } from "@/data/sponsors";
 
 /** Logo circle and caption size per tier, largest first. */
 const SIZES: Record<SponsorTier, { circle: string; caption: string; gap: string }> = {
-  bronze: { circle: "w-40 h-40 sm:w-52 sm:h-52", caption: "max-w-[13rem] text-base", gap: "gap-12" },
+  title: { circle: "w-48 h-48 sm:w-64 sm:h-64", caption: "max-w-[16rem] text-lg", gap: "gap-12" },
+  silver: { circle: "w-40 h-40 sm:w-52 sm:h-52", caption: "max-w-[13rem] text-base", gap: "gap-12" },
+  bronze: { circle: "w-36 h-36 sm:w-44 sm:h-44", caption: "max-w-[12rem] text-base", gap: "gap-12" },
   partner: { circle: "w-28 h-28 sm:w-32 sm:h-32", caption: "max-w-[9rem] text-sm", gap: "gap-8 sm:gap-10" },
-  community: { circle: "w-20 h-20 sm:w-24 sm:h-24", caption: "max-w-[8rem] text-xs", gap: "gap-6 sm:gap-8" },
+  community: { circle: "w-24 h-24 sm:w-28 sm:h-28", caption: "max-w-[8rem] text-xs", gap: "gap-6 sm:gap-8" },
 };
 
 const Sponsors = () => {
