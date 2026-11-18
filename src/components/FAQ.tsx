@@ -6,22 +6,18 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Download, HelpCircle } from "lucide-react";
+import { EVENT } from "@/data/event";
 
 const FAQ = () => {
   const faqs = [
     {
       question: "Is it free?",
-      answer: "Yes!! It's free: it's an MLH event.",
+      answer: "Yes! Participation is completely free.",
     },
     {
       question: "Do I need prior experience?",
       answer:
         "Not at all! HackDay Butwal is designed for hackers of all skill levels. We'll have workshops for beginners and mentors to help you throughout the event.",
-    },
-    {
-      question: "Is it free?",
-      answer:
-        "No. The pricing details will be revealed soon. Stay tuned for more information!",
     },
     {
       question: "What's the team size requirement?",
@@ -41,7 +37,7 @@ const FAQ = () => {
     {
       question: "What if I have more questions?",
       answer:
-        "Feel free to reach out to us at support@butwalhacks.com for quick answers!",
+        `Feel free to reach out to us at ${EVENT.contact.support} for quick answers!`,
     },
   ];
 

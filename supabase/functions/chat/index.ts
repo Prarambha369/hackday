@@ -1,17 +1,59 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
+const ALLOWED_ORIGINS = new Set([
+  "https://hackday.butwalhacks.com",
+  "https://hackday-navy.vercel.app",
+  "http://localhost:8080",
+]);
+
+const MAX_MESSAGES = 12;
+const MAX_CHARS = 1000;
+
+type ChatMessage = { role: "user" | "assistant"; content: string };
+
+const corsFor = (origin: string | null) => ({
+  "Access-Control-Allow-Origin": origin && ALLOWED_ORIGINS.has(origin) ? origin : "https://hackday.butwalhacks.com",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Vary": "Origin",
+});
+
+/** Keep only user/assistant turns (no client-supplied system prompts), cap count and length. */
+const sanitize = (input: unknown): ChatMessage[] | null => {
+  if (!Array.isArray(input)) return null;
+  const msgs = input
+    .filter((m): m is ChatMessage =>
+      !!m && typeof m === "object" &&
+      (m.role === "user" || m.role === "assistant") &&
+      typeof m.content === "string" && m.content.trim().length > 0)
+    .slice(-MAX_MESSAGES)
+    .map((m) => ({ role: m.role, content: m.content.slice(0, MAX_CHARS) }));
+  return msgs.length && msgs[msgs.length - 1].role === "user" ? msgs : null;
 };
 
 serve(async (req) => {
+  const origin = req.headers.get("origin");
+  const corsHeaders = corsFor(origin);
+
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
+  if (req.method !== "POST" || (origin && !ALLOWED_ORIGINS.has(origin))) {
+    return new Response(JSON.stringify({ error: "Forbidden" }), {
+      status: 403,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
   try {
-    const { messages } = await req.json();
+    const body = await req.json().catch(() => null);
+    const messages = sanitize(body?.messages);
+    if (!messages) {
+      return new Response(JSON.stringify({ error: "Invalid request" }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     
     if (!LOVABLE_API_KEY) {
@@ -91,8 +133,8 @@ ASSISTANT BEHAVIOR:
           { role: "system", content: systemPrompt },
           ...messages,
         ],
-        temperature: 0.7,
-        max_tokens: 500,
+        temperature: 0.3,
+        max_tokens: 400,
       }),
     });
 
@@ -106,7 +148,7 @@ ASSISTANT BEHAVIOR:
     }
 
     const data = await response.json();
-    const assistantMessage = data.choices[0].message.content;
+    const assistantMessage = data?.choices?.[0]?.message?.content ?? "Sorry, I couldn't answer that.";
 
     return new Response(
       JSON.stringify({ response: assistantMessage }),
@@ -115,7 +157,7 @@ ASSISTANT BEHAVIOR:
   } catch (error) {
     console.error("Error:", error);
     return new Response(
-      JSON.stringify({ error: error instanceof Error ? error.message : "Unknown error" }),
+      JSON.stringify({ error: "Something went wrong" }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }

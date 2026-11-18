@@ -1,3 +1,4 @@
+import { EVENT } from "@/data/event";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -169,7 +170,7 @@ const CodeOfConduct = () => {
               </li>
               <li className="flex gap-4">
                 <span className="text-primary font-bold">3.</span>
-                <span className="text-foreground/90">Dispatching a note to <a href="mailto:support@butwalhacks.com" className="text-primary font-semibold hover:underline">support@butwalhacks.com</a>.</span>
+                <span className="text-foreground/90">Dispatching a note to <a href={`mailto:${EVENT.contact.support}`} className="text-primary font-semibold hover:underline">{EVENT.contact.support}</a>.</span>
               </li>
             </ol>
             <p className="text-foreground/90 leading-relaxed mb-6">
@@ -247,8 +248,8 @@ const CodeOfConduct = () => {
             <h3 className="text-2xl font-bold text-foreground mb-4">Contact</h3>
             <p className="text-foreground/90 leading-relaxed">
               If you want to know more or need help, please get in touch with us at{" "}
-              <a href="mailto:support@butwalhacks.com" className="text-primary font-semibold hover:underline">
-                support@butwalhacks.com
+              <a href={`mailto:${EVENT.contact.support}`} className="text-primary font-semibold hover:underline">
+                {EVENT.contact.support}
               </a>
             </p>
           </section>

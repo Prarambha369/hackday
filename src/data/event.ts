@@ -21,6 +21,11 @@ export const EVENT = {
     mlh: "https://events.mlh.io/events/13395-hackday-butwal",
     maps: "https://www.google.com/maps/search/?api=1&query=Lumbini+World+School+Tilottama",
   },
+  social: {
+    instagram: "https://www.instagram.com/butwalhacks/",
+    linkedin: "https://www.linkedin.com/company/butwalhacks/",
+    github: "https://github.com/Prarambha369/Butwal-Hacks",
+  },
   contact: {
     support: "support@butwalhacks.com",
     sponsorship: "mail@butwalhacks.com",

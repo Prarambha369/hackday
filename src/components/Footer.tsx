@@ -1,4 +1,5 @@
-import { MessageCircle, Instagram, Github, Mail } from "lucide-react";
+import { MessageCircle, Instagram, Github, Linkedin, Mail } from "lucide-react";
+import { EVENT } from "@/data/event";
 
 const Footer = () => {
   return (
@@ -56,15 +57,16 @@ const Footer = () => {
             <h4 className="font-bold mb-4">Get in Touch</h4>
             <div className="space-y-3">
               <a
-                href="mailto:support@butwalhacks.com"
+                href={`mailto:${EVENT.contact.support}`}
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                support@butwalhacks.com
+                {EVENT.contact.support}
               </a>
               <div className="flex gap-3">
                 <a
-                  href="https://www.instagram.com/direct/t/758290143656900/"
+                  href={EVENT.social.instagram}
+                  aria-label="Butwal Hacks on Instagram"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all"
@@ -72,7 +74,17 @@ const Footer = () => {
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://github.com"
+                  href={EVENT.social.linkedin}
+                  aria-label="Butwal Hacks on LinkedIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a
+                  href={EVENT.social.github}
+                  aria-label="Butwal Hacks on GitHub"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all"
@@ -84,21 +96,19 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* MLH Badge Placeholder */}
-        <div className="border-t border-border pt-8 mb-8 text-center">
-          <div className="inline-block bg-muted px-6 py-3 rounded-lg">
-            <p className="text-sm text-muted-foreground">
-              MLH Official Event Badge (Pending Approval)
-            </p>
-          </div>
-        </div>
-
-        {/* Organizer & Event Mentions */}
-        <div className="text-center mb-6">
-          <p className="text-sm text-foreground">Butwal Hacks</p>
-          <p className="text-sm text-foreground">Event Organiser Butwal Hacks</p>
-          <p className="text-sm text-foreground">Butwal Hacks</p>
-          <p className="text-sm text-foreground">Event by Mlh x Google Gemini</p>
+        {/* Organizer & MLH */}
+        <div className="border-t border-border pt-8 mb-6 text-center space-y-1">
+          <p className="text-sm text-foreground">
+            Organized by{" "}
+            <a href={EVENT.organizerUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+              {EVENT.organizer}
+            </a>
+          </p>
+          <p className="text-sm text-foreground">
+            <a href={EVENT.links.mlh} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+              Official MLH event listing
+            </a>
+          </p>
         </div>
 
         {/* Copyright */}
