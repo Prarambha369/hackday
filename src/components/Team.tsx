@@ -1,14 +1,14 @@
 const Team = () => {
-  const teamMembers = [
-    { name: "Sirjal Adhikari", phone: "9744319122" },
-    { name: "Bedant Gautam", phone: "9766311444" },
-    { name: "Saksham Gyawali", phone: "9844180185" },
-    { name: "Basanta Aryal", phone: "9767016364" },
-    { name: "Prarambha Bashyal", phone: "Prarambha@butwalhacks.com" },
-    { name: "Hardik Chapagain", phone: "Hardik@butwalhacks.com" },
-    { name: "Rabin Chudali", phone: "Rabin@butwalhacks.com" },
+  // Only public @butwalhacks.com addresses here; personal phone numbers were removed.
+  const teamMembers: { name: string; email?: string }[] = [
+    { name: "Sirjal Adhikari" },
+    { name: "Bedant Gautam" },
+    { name: "Saksham Gyawali" },
+    { name: "Basanta Aryal" },
+    { name: "Prarambha Bashyal", email: "Prarambha@butwalhacks.com" },
+    { name: "Hardik Chapagain", email: "Hardik@butwalhacks.com" },
+    { name: "Rabin Chudali", email: "Rabin@butwalhacks.com" },
   ];
-
   return (
     <section id="team" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -20,20 +20,16 @@ const Team = () => {
 
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {teamMembers.map((member, index) => (
+            {teamMembers.map((member) => (
               <article
-                key={index}
+                key={member.name}
                 className="bg-white text-black border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-transform ease-out duration-150 hover:-translate-y-1"
               >
                 <div className="flex flex-col items-start gap-3">
                   <h3 className="text-lg font-bold leading-6 text-orange-500">{member.name}</h3>
-                  {member.phone && member.phone.includes("@") ? (
-                    <a href={`mailto:${member.phone}`} className="text-orange-500 font-semibold">
-                      {member.phone}
-                    </a>
-                  ) : (
-                    <a href={`tel:${member.phone}`} className="text-orange-500 font-semibold">
-                      {member.phone}
+                  {member.email && (
+                    <a href={`mailto:${member.email}`} className="text-orange-500 font-semibold">
+                      {member.email}
                     </a>
                   )}
                 </div>

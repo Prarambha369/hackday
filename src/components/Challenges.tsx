@@ -52,10 +52,10 @@ const Challenges = () => {
 
         <div className="text-center bg-accent/10 border-4 border-foreground p-8 transform rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-3xl mx-auto mb-16">
           <p className="text-3xl font-black text-primary mb-4 font-heading">
-            Theme Will Be Revealed Soon! 🎯
+            Built with Google Gemini 🎯
           </p>
           <p className="text-lg text-muted-foreground">
-            Get ready to build something amazing. Use Google Gemini API and other cutting-edge tools!
+            Teams built their projects with the Google Gemini API and other cutting-edge tools.
           </p>
         </div>
 
@@ -81,10 +81,14 @@ const Challenges = () => {
 
         <div className="text-center bg-card border-4 border-foreground p-8 transform rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-3xl mx-auto">
           <p className="text-2xl font-bold text-foreground mb-4">
-            All winners will receive certificates and exclusive Hack Day swag! 🏆
+            Winners received certificates and exclusive HackDay swag! 🏆
           </p>
           <p className="text-lg text-muted-foreground">
-            Prize money details will be announced soon!
+            Browse every submission in the{" "}
+            <a href="https://butwal.devpost.com/project-gallery" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">
+              Devpost project gallery
+            </a>
+            .
           </p>
         </div>
       </div>

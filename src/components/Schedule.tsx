@@ -18,14 +18,14 @@ const Schedule = () => {
             <div className="absolute -bottom-3 left-0 w-full h-4 bg-primary/20 -rotate-1" />
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            {EVENT.durationHours} hours of non-stop innovation and learning
+            {EVENT.durationHours} hours of non-stop innovation and learning, {EVENT.dateLong}
           </p>
           
           <div className="bg-card border-4 border-foreground p-8 transform rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-2xl mx-auto">
             <p className="text-6xl font-black text-primary mb-4 font-heading">{EVENT.dateLabel}</p>
             <p className="text-2xl font-bold text-foreground mb-2">Event Date</p>
             <p className="text-lg text-muted-foreground">
-              Detailed schedule to be revealed soon. Stay tuned!
+              Held on {EVENT.dateLong} at {EVENT.venue}, Tilottama.
             </p>
 
             <div className="mt-6 flex flex-col items-center gap-4">
@@ -36,7 +36,7 @@ const Schedule = () => {
                 className="w-full sm:w-auto"
               >
                 <Button className="bg-orange-500 hover:bg-orange-600 text-white transform -rotate-1">
-                  Register on MLH
+                  View on MLH
                 </Button>
               </a>
 

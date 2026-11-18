@@ -43,16 +43,16 @@ const Workshops = () => {
             </svg>
           </div>
           <p className="text-lg md:text-xl text-muted-foreground font-medium">
-            Learn from experts and get guidance throughout the event
+            Hackers learned from experts and got guidance throughout the event
           </p>
         </div>
 
         <div className="text-center bg-accent/10 border-4 border-foreground p-8 transform -rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-3xl mx-auto mb-16">
           <p className="text-3xl font-black text-primary mb-4 font-heading">
-            Workshops Coming Soon! 🚀
+            Hands-on Workshops 🚀
           </p>
           <p className="text-lg text-muted-foreground">
-            Stay tuned for exciting hands-on workshops to level up your skills!
+            Participants leveled up their skills in hands-on sessions during the hackathon.
           </p>
         </div>
 

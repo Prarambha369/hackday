@@ -13,12 +13,14 @@ export const EVENT = {
   // Matches the MLH and Devpost listings.
   date: "2026-01-17",
   dateLabel: "January 17",
+  dateLong: "January 17, 2026",
   startTime: "08:00:00",
   endTime: "18:00:00",
   durationHours: 10,
   links: {
     devpost: "https://butwal.devpost.com/",
     mlh: "https://events.mlh.io/events/13395-hackday-butwal",
+    projects: "https://butwal.devpost.com/project-gallery",
     maps: "https://www.google.com/maps/search/?api=1&query=Lumbini+World+School+Tilottama",
   },
   social: {

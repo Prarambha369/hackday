@@ -80,9 +80,9 @@ const Navbar = () => {
             <Button 
               size="sm" 
               className="transform -rotate-1 hover:rotate-0"
-              onClick={() => window.open(EVENT.links.devpost, '_blank', 'noopener,noreferrer')}
+              onClick={() => window.open(EVENT.organizerUrl, '_blank', 'noopener,noreferrer')}
             >
-              Register on Devpost
+              Upcoming Events
             </Button>
           </div>
 
@@ -109,8 +109,8 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button size="sm" className="w-full" onClick={() => window.open(EVENT.links.devpost, '_blank', 'noopener,noreferrer')}>
-                Register on Devpost
+              <Button size="sm" className="w-full" onClick={() => window.open(EVENT.organizerUrl, '_blank', 'noopener,noreferrer')}>
+                Upcoming Events
               </Button>
             </div>
           </div>

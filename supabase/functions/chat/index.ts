@@ -109,12 +109,13 @@ PRIMARY BRANDING & ASSETS:
 - Hero/center logo asset (repo): src/assets/hackday-logo.png
 - Favicon (served): /favicon.png (currently set to the top-left image)
 
-REGISTRATION & LINKS:
-- Registration is handled only through Devpost: https://butwal.devpost.com/
-- Do not provide any other registration links or local registration endpoints.
+STATUS:
+- The event already took place on 2026-01-17. Registration is closed.
+- Submitted projects: https://butwal.devpost.com/project-gallery
+- For upcoming events, point users to Butwal Hacks: https://www.butwalhacks.com
 
 EVENT BASICS:
-- Location: Butwal, Nepal
+- Venue: Lumbini World School, Tilottama (Butwal area), Nepal
 - Date: 2026-01-17
 - Time (local): 08:00 — 18:00 (Asia/Kathmandu, NPT)
 - Duration: 10 hours
@@ -157,7 +158,7 @@ CONTACT:
 ASSISTANT BEHAVIOR:
 - Use Asia/Kathmandu (NPT) when interpreting or converting event times
 - Keep answers concise and helpful. If you lack confirmed information, reply: "I don't have that information — please contact the organizers at support@butwalhacks.com"
-- For registration, always direct users to the Devpost page
+- If asked about registering, explain the event is over and point to https://www.butwalhacks.com for upcoming events
 - If asked about files/assets, reference the repo asset paths above for developers and /favicon.png for the served favicon
 `;
 
