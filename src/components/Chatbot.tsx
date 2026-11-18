@@ -39,7 +39,8 @@ const Chatbot = () => {
 
     try {
       const { data, error } = await supabase.functions.invoke("chat", {
-        body: { messages: [...messages, userMessage] },
+        // Server only uses the last 12 turns; keep the payload small.
+        body: { messages: [...messages, userMessage].slice(-12) },
       });
 
       if (error) throw error;
@@ -132,7 +133,9 @@ const Chatbot = () => {
               <Input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.nativeEvent.isComposing) sendMessage();
+                }}
                 placeholder="Ask about the event..."
                 className="flex-1 border-2 border-foreground"
                 disabled={isLoading}

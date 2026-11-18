@@ -8,6 +8,34 @@ const ALLOWED_ORIGINS = new Set([
 
 const MAX_MESSAGES = 12;
 const MAX_CHARS = 1000;
+const MAX_BODY_BYTES = 64 * 1024;
+
+class PayloadTooLargeError extends Error {}
+
+/** Read the body while counting bytes actually received; abort once the limit is exceeded. */
+const readBodyLimited = async (req: Request, limit: number): Promise<string> => {
+  const declared = Number(req.headers.get("content-length"));
+  if (Number.isFinite(declared) && declared > limit) throw new PayloadTooLargeError();
+  if (!req.body) return "";
+
+  const reader = req.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let received = 0;
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    received += value.byteLength;
+    if (received > limit) {
+      await reader.cancel().catch(() => {});
+      throw new PayloadTooLargeError();
+    }
+    chunks.push(value);
+  }
+  const buf = new Uint8Array(received);
+  let offset = 0;
+  for (const c of chunks) { buf.set(c, offset); offset += c.byteLength; }
+  return new TextDecoder().decode(buf);
+};
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
 
@@ -46,7 +74,20 @@ serve(async (req) => {
   }
 
   try {
-    const body = await req.json().catch(() => null);
+    let raw: string;
+    try {
+      raw = await readBodyLimited(req, MAX_BODY_BYTES);
+    } catch (e) {
+      if (e instanceof PayloadTooLargeError) {
+        return new Response(JSON.stringify({ error: "Payload too large" }), {
+          status: 413,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+      throw e;
+    }
+    let body: { messages?: unknown } | null = null;
+    try { body = JSON.parse(raw); } catch { body = null; }
     const messages = sanitize(body?.messages);
     if (!messages) {
       return new Response(JSON.stringify({ error: "Invalid request" }), {
