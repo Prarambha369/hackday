@@ -118,9 +118,17 @@ const Hero = () => {
             </svg>
           </div>
 
+          <p className="text-xs md:text-sm uppercase tracking-widest font-bold text-muted-foreground mb-2">Theme</p>
           <p className="text-2xl md:text-4xl font-bold text-primary mb-4 transform rotate-1 animate-slide-in-right">
-            Web Development & Innovation Hackathon
+            {EVENT.theme}
           </p>
+          <ul className="flex flex-wrap justify-center gap-3 mb-6" aria-label="Theme tags">
+            {EVENT.themeTags.map((tag) => (
+              <li key={tag} className="px-3 py-1 border-2 border-foreground bg-accent/20 text-sm font-bold text-foreground">
+                {tag}
+              </li>
+            ))}
+          </ul>
 
           <p className="text-base md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
             {EVENT.name} by {EVENT.organizer} brought together student builders for {EVENT.durationHours} hours of web development, AI, mobile apps, and innovation. A Major League Hacking (MLH) student hackathon. Here's a look back at the event.

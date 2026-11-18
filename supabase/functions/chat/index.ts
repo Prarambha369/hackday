@@ -105,6 +105,7 @@ serve(async (req) => {
 
 PRIMARY BRANDING & ASSETS:
 - Event name: HackDay Butwal
+- Tagline/theme: Creativity with caffeine ☕
 - Top-left logo asset (repo): src/assets/butwal-hacks-mark.png
 - Hero/center logo asset (repo): src/assets/hackday-logo.png
 - Favicon (served): /favicon.png (currently set to the top-left image)
@@ -133,11 +134,14 @@ ELIGIBILITY & TEAMS:
 - Audience: students (high school, college, university)
 - Team size: commonly 2–3 members; direct users to Devpost for official rules
 
-JUDGING CRITERIA:
-- Innovation
-- Technical complexity
-- Design
-- Impact
+THEME:
+- "Creativity with caffeine ☕" (Devpost tags: Web, Low/No Code, Beginner Friendly)
+
+JUDGING CRITERIA (from Devpost):
+- Creativity
+- Usefulness
+- Clarity
+- How well it works
 
 LOGISTICS & WHAT TO BRING:
 - Laptop, chargers, any hardware you intend to use, and student ID

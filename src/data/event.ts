@@ -8,6 +8,9 @@ export const EVENT = {
   organizer: "Butwal Hacks",
   organizerUrl: "https://www.butwalhacks.com",
   upcomingEventsUrl: "https://www.butwalhacks.com/events",
+  /** Theme and tags, as listed on Devpost. */
+  theme: "Creativity with caffeine ☕",
+  themeTags: ["Web", "Low/No Code", "Beginner Friendly"],
   location: "Butwal, Nepal",
   venue: "Lumbini World School",
   timezone: "Asia/Kathmandu",
