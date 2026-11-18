@@ -34,7 +34,7 @@ const CodeOfConduct = () => {
         {/* Content Sections */}
         <div className="space-y-10">
           {/* Summary */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-4">Summary</h3>
             <p className="text-foreground/90 leading-relaxed">
               Be respectful towards other people and try to be good. Not even once in a lifetime, harassment and
@@ -45,7 +45,7 @@ const CodeOfConduct = () => {
           </section>
 
           {/* Our Commitment */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-4">Our Commitment</h3>
             <p className="text-foreground/90 leading-relaxed">
               HackDay Butwal aims to provide a safe and supportive environment for all teenage participants (under
@@ -58,7 +58,7 @@ const CodeOfConduct = () => {
           </section>
 
           {/* Expected Behavior */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-6">Expected Behavior</h3>
             <ul className="space-y-3">
               <li className="flex gap-4">
@@ -93,7 +93,7 @@ const CodeOfConduct = () => {
           </section>
 
           {/* Unacceptable Behavior */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-6">Unacceptable Behavior</h3>
             <p className="text-foreground/90 leading-relaxed mb-6">
               Some examples of possible behavior that may not be accepted at Hack Day Butwal are:
@@ -139,7 +139,7 @@ const CodeOfConduct = () => {
           </section>
 
           {/* Scope */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-4">Scope</h3>
             <p className="text-foreground/90 leading-relaxed">
               The present Code of Conduct is mandatory for everyone who is in any way related to Hack Day
@@ -152,7 +152,7 @@ const CodeOfConduct = () => {
           </section>
 
           {/* Reporting Concerns */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-6">Reporting Concerns</h3>
             <p className="text-foreground/90 leading-relaxed mb-6">
               In case you witness or get to know about a behavior that is against this Code of Conduct or if you
@@ -196,7 +196,7 @@ const CodeOfConduct = () => {
           </section>
 
           {/* Enforcement */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-6">Enforcement</h3>
             <p className="text-foreground/90 leading-relaxed mb-6">
               In a case where an individual violates the regulations outlined in this Code of Conduct, the
@@ -244,7 +244,7 @@ const CodeOfConduct = () => {
           </section>
 
           {/* Contact */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-4">Contact</h3>
             <p className="text-foreground/90 leading-relaxed">
               If you want to know more or need help, please get in touch with us at{" "}

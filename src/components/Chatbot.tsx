@@ -73,7 +73,7 @@ const Chatbot = () => {
         <Button
           aria-label="Open chat assistant"
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all"
+          className="fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:translate-x-1 hover:translate-y-1 transition-all"
         >
           <MessageCircle className="h-6 w-6" />
         </Button>
@@ -81,7 +81,7 @@ const Chatbot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-96 h-[min(32rem,calc(100dvh-2rem))] bg-card border-4 border-foreground shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] flex flex-col transform -rotate-1">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-96 h-[min(32rem,calc(100dvh-2rem))] bg-card border-4 border-foreground shadow-[10px_10px_0px_0px_hsl(var(--foreground))] flex flex-col transform -rotate-1">
           {/* Header */}
           <div className="bg-primary p-4 border-b-4 border-foreground flex justify-between items-center">
             <h3 className="font-black text-lg text-primary-foreground">

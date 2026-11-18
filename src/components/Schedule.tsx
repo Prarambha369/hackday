@@ -21,7 +21,7 @@ const Schedule = () => {
             {EVENT.durationHours} hours of non-stop innovation and learning, {EVENT.dateLong}
           </p>
           
-          <div className="bg-card border-4 border-foreground p-8 transform rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-2xl mx-auto">
+          <div className="bg-card border-4 border-foreground p-8 transform rotate-1 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] max-w-2xl mx-auto">
             <p className="text-6xl font-black text-primary mb-4 font-heading">{EVENT.dateLabel}</p>
             <p className="text-2xl font-bold text-foreground mb-2">Event Date</p>
             <p className="text-lg text-muted-foreground">

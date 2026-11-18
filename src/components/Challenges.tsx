@@ -39,7 +39,7 @@ const Challenges = () => {
           </p>
         </div>
 
-        <div className="text-center bg-accent/10 border-4 border-foreground p-8 transform rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-3xl mx-auto mb-16">
+        <div className="text-center bg-accent/10 border-4 border-foreground p-8 transform rotate-1 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] max-w-3xl mx-auto mb-16">
           <p className="text-3xl font-black text-primary mb-4 font-heading">
             Built with Google Gemini 🎯
           </p>
@@ -53,7 +53,7 @@ const Challenges = () => {
           {PODIUM.map((prize, i) => (
             <div
               key={prize.place}
-              className={`bg-card border-4 border-foreground p-8 transform ${tilts[i]} hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]`}
+              className={`bg-card border-4 border-foreground p-8 transform ${tilts[i]} hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:shadow-[12px_12px_0px_0px_hsl(var(--foreground))]`}
             >
               <div className="text-6xl mb-4" aria-hidden="true">{prize.emoji}</div>
               <p className="text-3xl font-black text-primary font-heading">{prize.place}</p>
@@ -86,7 +86,7 @@ const Challenges = () => {
         </div>
 
         {/* Perks for everyone */}
-        <div className="text-center bg-card border-4 border-foreground p-8 transform rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-3xl mx-auto">
+        <div className="text-center bg-card border-4 border-foreground p-8 transform rotate-1 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] max-w-3xl mx-auto">
           <p className="text-2xl font-bold text-foreground mb-4 inline-flex items-center gap-2">
             <Gift className="w-6 h-6 text-primary" aria-hidden="true" />
             Every team took home

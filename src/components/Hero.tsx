@@ -37,7 +37,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
 
       {/* Floating Icons */}
       <div className="absolute top-32 right-1/4 animate-float hidden lg:block">
@@ -142,7 +142,7 @@ const Hero = () => {
             <Button
               size="lg"
               asChild
-              className="text-lg px-10 py-6 font-bold transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1"
+              className="text-lg px-10 py-6 font-bold transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:translate-x-1 hover:translate-y-1"
             >
               <a href={EVENT.links.projects} target="_blank" rel="noopener noreferrer">View Projects on Devpost</a>
             </Button>
@@ -158,17 +158,17 @@ const Hero = () => {
 
           {/* Event Info - Tilted Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="bg-card border-4 border-foreground p-6 transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
+            <div className="bg-card border-4 border-foreground p-6 transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:shadow-[12px_12px_0px_0px_hsl(var(--foreground))] hover:-translate-y-1">
               <p className="text-5xl font-black text-primary mb-3 font-heading">{EVENT.durationHours}</p>
               <p className="text-xl font-bold text-foreground">Hours</p>
               <p className="text-sm text-muted-foreground mt-1">Of Innovation</p>
             </div>
-            <div className="bg-card border-4 border-foreground p-6 transform rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
+            <div className="bg-card border-4 border-foreground p-6 transform rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:shadow-[12px_12px_0px_0px_hsl(var(--foreground))] hover:-translate-y-1">
               <p className="text-5xl font-black text-primary mb-3 font-heading">48+</p>
               <p className="text-xl font-bold text-foreground">Hackers</p>
               <p className="text-sm text-muted-foreground mt-1">Participants</p>
             </div>
-            <div className="bg-card border-4 border-foreground p-6 transform -rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
+            <div className="bg-card border-4 border-foreground p-6 transform -rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:shadow-[12px_12px_0px_0px_hsl(var(--foreground))] hover:-translate-y-1">
               <p className="text-5xl font-black text-primary mb-3 font-heading">{PRIZE_POOL}</p>
               <p className="text-xl font-bold text-foreground">In Prizes</p>
               <p className="text-sm text-muted-foreground mt-1">{PROJECT_COUNT} projects submitted</p>

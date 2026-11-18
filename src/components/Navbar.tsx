@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import logo from "@/assets/hackday-logo.png";
 import topLeftLogo from "@/assets/butwal-hacks-mark.png";
 import { EVENT } from "@/data/event";
+import ThemeToggle from "@/components/ThemeToggle";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -84,15 +85,21 @@ const Navbar = () => {
             >
               Upcoming Events
             </Button>
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 border-2 border-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile: theme toggle + menu button */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              className="p-2 border-2 border-foreground text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}

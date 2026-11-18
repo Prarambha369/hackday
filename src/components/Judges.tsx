@@ -28,7 +28,7 @@ const Judges = () => {
           {JUDGES.map((judge, i) => (
             <li
               key={judge.name}
-              className={`bg-card border-4 border-foreground p-6 transform ${tilts[i % tilts.length]} hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1`}
+              className={`bg-card border-4 border-foreground p-6 transform ${tilts[i % tilts.length]} hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:shadow-[12px_12px_0px_0px_hsl(var(--foreground))] hover:-translate-y-1`}
             >
               <div className="w-16 h-16 bg-accent border-4 border-foreground flex items-center justify-center mb-4 transform -rotate-6">
                 <UserRound className="w-8 h-8 text-foreground" aria-hidden="true" />
@@ -39,7 +39,7 @@ const Judges = () => {
           ))}
         </ul>
 
-        <div className="text-center bg-accent/10 border-4 border-foreground p-8 transform -rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-3xl mx-auto">
+        <div className="text-center bg-accent/10 border-4 border-foreground p-8 transform -rotate-1 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] max-w-3xl mx-auto">
           <p className="text-2xl md:text-3xl font-black text-primary mb-6 font-heading">Judging Criteria</p>
           <ul className="flex flex-wrap justify-center gap-3">
             {JUDGING_CRITERIA.map((c) => (

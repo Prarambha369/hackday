@@ -23,7 +23,7 @@ const Team = () => {
             {teamMembers.map((member) => (
               <article
                 key={member.name}
-                className="bg-white text-black border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-transform ease-out duration-150 hover:-translate-y-1"
+                className="bg-card text-card-foreground border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-transform ease-out duration-150 hover:-translate-y-1"
               >
                 <div className="flex flex-col items-start gap-3">
                   <h3 className="text-lg font-bold leading-6 text-orange-500">{member.name}</h3>

@@ -63,7 +63,7 @@ const FAQ = () => {
         </div>
 
         <div className="max-w-4xl mx-auto mb-12">
-          <div className="border-4 border-foreground bg-card p-8 transform -rotate-1 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
+          <div className="border-4 border-foreground bg-card p-8 transform -rotate-1 shadow-[10px_10px_0px_0px_hsl(var(--foreground))]">
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border-b-2 border-foreground/20">
