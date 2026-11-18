@@ -1,6 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { EVENT } from "@/data/event";
-import { SPONSORS } from "@/data/sponsors";
+import { SPONSORS, TIERS } from "@/data/sponsors";
+import type { SponsorTier } from "@/data/sponsors";
+
+/** Logo circle and caption size per tier, largest first. */
+const SIZES: Record<SponsorTier, { circle: string; caption: string; gap: string }> = {
+  bronze: { circle: "w-40 h-40 sm:w-52 sm:h-52", caption: "max-w-[13rem] text-base", gap: "gap-12" },
+  partner: { circle: "w-28 h-28 sm:w-32 sm:h-32", caption: "max-w-[9rem] text-sm", gap: "gap-8 sm:gap-10" },
+  community: { circle: "w-20 h-20 sm:w-24 sm:h-24", caption: "max-w-[8rem] text-xs", gap: "gap-6 sm:gap-8" },
+};
 
 const Sponsors = () => {
   return (
@@ -19,32 +27,46 @@ const Sponsors = () => {
           </p>
         </div>
 
-        <ul className="max-w-5xl mx-auto flex flex-wrap justify-center gap-10 sm:gap-12">
-          {SPONSORS.map((sponsor) => (
-            <li key={sponsor.logo} className="flex flex-col items-center gap-3">
-              <div
-                className={`rounded-full overflow-hidden bg-white border-2 border-foreground/10 transition-transform hover:scale-105 ${
-                  sponsor.featured ? "w-40 h-40 sm:w-48 sm:h-48" : "w-32 h-32"
-                }`}
-              >
-                <img
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  title={sponsor.name}
-                  loading="lazy"
-                  decoding="async"
-                  width={500}
-                  height={500}
-                  className={`w-full h-full ${sponsor.contain ? "object-contain p-2" : "object-cover"}`}
-                />
+        <div className="max-w-5xl mx-auto space-y-14">
+          {TIERS.map((tier) => {
+            const sponsors = SPONSORS.filter((s) => s.tier === tier.id);
+            if (!sponsors.length) return null;
+            const size = SIZES[tier.id];
+            return (
+              <div key={tier.id}>
+                <h3 className="text-center text-sm font-black uppercase tracking-widest text-muted-foreground mb-6">
+                  {tier.label}
+                </h3>
+                <ul className={`flex flex-wrap justify-center ${size.gap}`}>
+                  {sponsors.map((sponsor) => (
+                    <li key={sponsor.logo} className="flex flex-col items-center gap-3">
+                      <div
+                        className={`rounded-full overflow-hidden bg-white border-2 border-foreground/10 transition-transform hover:scale-105 ${size.circle}`}
+                      >
+                        <img
+                          src={sponsor.logo}
+                          alt={sponsor.name}
+                          title={sponsor.name}
+                          loading="lazy"
+                          decoding="async"
+                          width={400}
+                          height={400}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <span className={`text-center leading-tight ${size.caption}`}>
+                        <span className="block text-foreground font-semibold">{sponsor.name}</span>
+                        {sponsor.role !== tier.label && (
+                          <span className="block text-muted-foreground text-xs">{sponsor.role}</span>
+                        )}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <span className="text-center max-w-[10rem] leading-tight">
-                <span className="block text-foreground font-semibold text-sm">{sponsor.name}</span>
-                <span className="block text-muted-foreground text-xs">{sponsor.role}</span>
-              </span>
-            </li>
-          ))}
-        </ul>
+            );
+          })}
+        </div>
 
         <div className="text-center mt-12">
           <Button size="lg" className="transform -rotate-1 hover:rotate-0" asChild>
