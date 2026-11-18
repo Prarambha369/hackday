@@ -22,7 +22,7 @@ const Navbar = () => {
   const navLinks = [
     { label: "About", href: "#about" },
     { label: "Schedule", href: "#schedule" },
-    { label: "Challenges", href: "#challenges" },
+    { label: "Prizes", href: "#challenges" },
     { label: "Sponsors", href: "#sponsors" },
     { label: "FAQ", href: "#faq" },
     { label: "Code of Conduct", href: "/cod" },
@@ -80,7 +80,7 @@ const Navbar = () => {
             <Button 
               size="sm" 
               className="transform -rotate-1 hover:rotate-0"
-              onClick={() => window.open(EVENT.organizerUrl, '_blank', 'noopener,noreferrer')}
+              onClick={() => window.open(EVENT.upcomingEventsUrl, '_blank', 'noopener,noreferrer')}
             >
               Upcoming Events
             </Button>
@@ -109,7 +109,7 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button size="sm" className="w-full" onClick={() => window.open(EVENT.organizerUrl, '_blank', 'noopener,noreferrer')}>
+              <Button size="sm" className="w-full" onClick={() => window.open(EVENT.upcomingEventsUrl, '_blank', 'noopener,noreferrer')}>
                 Upcoming Events
               </Button>
             </div>

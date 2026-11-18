@@ -7,6 +7,7 @@ export const EVENT = {
   siteUrl: "https://hackday.butwalhacks.com",
   organizer: "Butwal Hacks",
   organizerUrl: "https://www.butwalhacks.com",
+  upcomingEventsUrl: "https://www.butwalhacks.com/events",
   location: "Butwal, Nepal",
   venue: "Lumbini World School",
   timezone: "Asia/Kathmandu",

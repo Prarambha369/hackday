@@ -112,7 +112,7 @@ PRIMARY BRANDING & ASSETS:
 STATUS:
 - The event already took place on 2026-01-17. Registration is closed.
 - Submitted projects: https://butwal.devpost.com/project-gallery
-- For upcoming events, point users to Butwal Hacks: https://www.butwalhacks.com
+- For upcoming events, point users to Butwal Hacks: https://www.butwalhacks.com/events
 
 EVENT BASICS:
 - Venue: Lumbini World School, Tilottama (Butwal area), Nepal
@@ -143,8 +143,16 @@ LOGISTICS & WHAT TO BRING:
 - Laptop, chargers, any hardware you intend to use, and student ID
 - Meals and snacks are provided
 
-PRIZES & SPONSORSHIP:
-- Prize details announced by organizers; do not invent amounts or sponsor names
+PRIZES & WINNERS (from Devpost; ₹22,221+ total, 16 projects submitted):
+- 1st Prize ₹11,111 + ElevenLabs Pro (3 months) for the team: Swasthya Sathi – Healthcare Journey Manager
+- 2nd Prize ₹7,777: CodeMentor
+- 3rd Prize ₹3,333: Sanket
+- Best Use of Gemini API (Google swag): Pet Care
+- Best Project Built with ElevenLabs (6 months ElevenLabs Scale): civic sewa
+- All participants: 3 months ElevenLabs Creator Tier and a .xyz domain (up to $10)
+- Do not invent other prizes, amounts or winners
+
+SPONSORSHIP:
 - Sponsorship contact: mail@butwalhacks.com (sponsorship deck download was removed; contact via email)
 
 SOCIAL / COMMUNICATION:
@@ -158,7 +166,7 @@ CONTACT:
 ASSISTANT BEHAVIOR:
 - Use Asia/Kathmandu (NPT) when interpreting or converting event times
 - Keep answers concise and helpful. If you lack confirmed information, reply: "I don't have that information — please contact the organizers at support@butwalhacks.com"
-- If asked about registering, explain the event is over and point to https://www.butwalhacks.com for upcoming events
+- If asked about registering, explain the event is over and point to https://www.butwalhacks.com/events for upcoming events
 - If asked about files/assets, reference the repo asset paths above for developers and /favicon.png for the served favicon
 `;
 

@@ -1,34 +1,23 @@
-import { Card } from "@/components/ui/card";
-import { Brain, Code, Cpu, Heart } from "lucide-react";
+import { ExternalLink, Gift } from "lucide-react";
+import { EVENT } from "@/data/event";
+import { PARTICIPANT_PERKS, PODIUM, PRIZE_POOL, PROJECT_COUNT, SPECIAL_PRIZES } from "@/data/prizes";
+import type { Winner } from "@/data/prizes";
+
+const WinnerLink = ({ winner }: { winner: Winner }) => (
+  <a
+    href={winner.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-1 font-bold text-foreground hover:text-primary underline decoration-primary/40 underline-offset-4"
+  >
+    {winner.project}
+    <ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
+  </a>
+);
+
+const tilts = ["-rotate-2", "rotate-1", "-rotate-1"];
 
 const Challenges = () => {
-  const challenges = [
-    {
-      icon: Brain,
-      title: "AI / ML Innovation",
-      description: "Build intelligent solutions using machine learning and AI technologies",
-      rotate: "-rotate-2"
-    },
-    {
-      icon: Code,
-      title: "Best Beginner Hack",
-      description: "Perfect for first-time hackers building their debut project",
-      rotate: "rotate-1"
-    },
-    {
-      icon: Cpu,
-      title: "Hardware Hero",
-      description: "Create innovative solutions combining hardware and software",
-      rotate: "-rotate-1"
-    },
-    {
-      icon: Heart,
-      title: "Social Impact Award",
-      description: "Develop projects that make a positive difference in society",
-      rotate: "rotate-2"
-    }
-  ];
-
   return (
     <section id="challenges" className="py-20 bg-secondary/30 relative overflow-hidden">
       {/* Decorative Elements */}
@@ -39,14 +28,14 @@ const Challenges = () => {
         <div className="text-center mb-16">
           <div className="relative inline-block mb-6">
             <h2 className="text-4xl md:text-6xl font-black text-foreground font-heading transform -rotate-1">
-              Challenges & Prizes
+              Prizes & Winners
             </h2>
             <svg className="absolute -bottom-3 left-0 w-full h-4" viewBox="0 0 200 12" preserveAspectRatio="none">
               <path d="M0,7 Q50,4 100,7 T200,7" stroke="hsl(var(--accent))" strokeWidth="4" fill="none" strokeLinecap="round"/>
             </svg>
           </div>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
-            Compete in multiple tracks and win amazing prizes
+            {PRIZE_POOL} in prizes across {PROJECT_COUNT} submitted projects
           </p>
         </div>
 
@@ -59,37 +48,64 @@ const Challenges = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-card border-4 border-foreground p-8 transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
-            <div className="text-6xl mb-4">🥇</div>
-            <p className="text-3xl font-black text-primary mb-2 font-heading">1st Place</p>
-            <p className="text-lg text-muted-foreground">Certificate + E-gadgets + Prize Money</p>
-          </div>
-
-          <div className="bg-card border-4 border-foreground p-8 transform rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
-            <div className="text-6xl mb-4">🥈</div>
-            <p className="text-3xl font-black text-primary mb-2 font-heading">2nd Place</p>
-            <p className="text-lg text-muted-foreground">Certificate + E-gadgets + Prize Money</p>
-          </div>
-
-          <div className="bg-card border-4 border-foreground p-8 transform -rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
-            <div className="text-6xl mb-4">🥉</div>
-            <p className="text-3xl font-black text-primary mb-2 font-heading">3rd Place</p>
-            <p className="text-lg text-muted-foreground">Certificate + E-gadgets + Prize Money</p>
-          </div>
+        {/* Podium */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {PODIUM.map((prize, i) => (
+            <div
+              key={prize.place}
+              className={`bg-card border-4 border-foreground p-8 transform ${tilts[i]} hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]`}
+            >
+              <div className="text-6xl mb-4" aria-hidden="true">{prize.emoji}</div>
+              <p className="text-3xl font-black text-primary font-heading">{prize.place}</p>
+              <p className="text-2xl font-black text-foreground mb-3">{prize.cash}</p>
+              <p className="text-sm text-muted-foreground mb-4">{prize.reward}</p>
+              {prize.winner && (
+                <p className="text-sm">
+                  <span className="block text-xs uppercase tracking-wide text-muted-foreground mb-1">Winner</span>
+                  <WinnerLink winner={prize.winner} />
+                </p>
+              )}
+            </div>
+          ))}
         </div>
 
+        {/* Special prizes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+          {SPECIAL_PRIZES.map((prize) => (
+            <div key={prize.title} className="bg-card border-4 border-foreground p-6 shadow-[6px_6px_0px_0px_hsl(var(--primary))]">
+              <p className="text-xl font-black text-foreground mb-1">{prize.title}</p>
+              <p className="text-sm text-muted-foreground mb-4">{prize.reward}</p>
+              {prize.winner && (
+                <p className="text-sm">
+                  <span className="block text-xs uppercase tracking-wide text-muted-foreground mb-1">Winner</span>
+                  <WinnerLink winner={prize.winner} />
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Perks for everyone */}
         <div className="text-center bg-card border-4 border-foreground p-8 transform rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-3xl mx-auto">
-          <p className="text-2xl font-bold text-foreground mb-4">
-            Winners received certificates and exclusive HackDay swag! 🏆
+          <p className="text-2xl font-bold text-foreground mb-4 inline-flex items-center gap-2">
+            <Gift className="w-6 h-6 text-primary" aria-hidden="true" />
+            Every team took home
           </p>
-          <p className="text-lg text-muted-foreground">
-            Browse every submission in the{" "}
-            <a href="https://butwal.devpost.com/project-gallery" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">
-              Devpost project gallery
-            </a>
-            .
-          </p>
+          <ul className="text-lg text-muted-foreground space-y-1 mb-6">
+            {PARTICIPANT_PERKS.map((perk) => (
+              <li key={perk.title}>
+                <span className="font-semibold text-foreground">{perk.title}:</span> {perk.reward}
+              </li>
+            ))}
+          </ul>
+          <a
+            href={EVENT.links.projects}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary font-semibold hover:underline"
+          >
+            Browse all {PROJECT_COUNT} projects on Devpost →
+          </a>
         </div>
       </div>
     </section>

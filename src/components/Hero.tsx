@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Plane, Code2, Zap, Trophy } from "lucide-react";
 import logo from "@/assets/hackday-logo.png";
 import { EVENT } from "@/data/event";
+import { PRIZE_POOL, PROJECT_COUNT } from "@/data/prizes";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
@@ -143,7 +144,7 @@ const Hero = () => {
               asChild
               className="text-lg px-10 py-6 font-bold border-4 transform rotate-1 hover:rotate-0 transition-all border-foreground shadow-[6px_6px_0px_0px_hsl(var(--primary))] hover:shadow-[3px_3px_0px_0px_hsl(var(--primary))] hover:translate-x-1 hover:translate-y-1"
             >
-              <a href={EVENT.organizerUrl} target="_blank" rel="noopener noreferrer">Upcoming {EVENT.organizer} Events</a>
+              <a href={EVENT.upcomingEventsUrl} target="_blank" rel="noopener noreferrer">Upcoming {EVENT.organizer} Events</a>
             </Button>
           </div>
 
@@ -160,9 +161,9 @@ const Hero = () => {
               <p className="text-sm text-muted-foreground mt-1">Participants</p>
             </div>
             <div className="bg-card border-4 border-foreground p-6 transform -rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
-              <p className="text-5xl font-black text-primary mb-3 font-heading">Jan 17</p>
-              <p className="text-xl font-bold text-foreground">2026</p>
-              <p className="text-sm text-muted-foreground mt-1">{EVENT.venue}</p>
+              <p className="text-5xl font-black text-primary mb-3 font-heading">{PRIZE_POOL}</p>
+              <p className="text-xl font-bold text-foreground">In Prizes</p>
+              <p className="text-sm text-muted-foreground mt-1">{PROJECT_COUNT} projects submitted</p>
             </div>
           </div>
         </div>

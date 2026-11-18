@@ -31,7 +31,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#challenges" className="text-muted-foreground hover:text-primary transition-colors">
-                  Challenges
+                  Prizes
                 </a>
               </li>
               <li>

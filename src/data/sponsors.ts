@@ -13,9 +13,9 @@ export const SPONSORS: Sponsor[] = [
   { name: "Major League Hacking", role: "Event Partner", logo: "/sponsors/mlh.jpg" },
   { name: "Lumbini World School", role: "Venue Partner", logo: "/sponsors/lumbini-world-school.png" },
   { name: "Notion", role: "Work Space Partner", logo: "/sponsors/notion.png" },
-  { name: "GitHub", role: "Education Partner", logo: "/sponsors/github.png" },
-  { name: ".xyz", role: "Domain Partner", logo: "/sponsors/xyz.png" },
+  { name: "GitHub Education", role: "Education Partner", logo: "/sponsors/github.png" },
+  { name: "gen.xyz", role: "Domain Partner", logo: "/sponsors/xyz.png" },
   { name: "Friends Cinemas", role: "Theater Partner", logo: "/sponsors/friends-cinemas.png" },
-  { name: "Delivery Partner", role: "Delivery Partner", logo: "/sponsors/delivery-partner.png" },
+  { name: "Bhoj Deals", role: "Delivery Partner", logo: "/sponsors/bhoj-deals.png" },
   { name: "Google Developer Groups Kathmandu", role: "Outreach Partner", logo: "/sponsors/gdg-kathmandu.png" },
 ];
