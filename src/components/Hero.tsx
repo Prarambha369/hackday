@@ -142,7 +142,7 @@ const Hero = () => {
             <Button
               size="lg"
               asChild
-              className="text-lg px-10 py-6 font-bold transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:translate-x-1 hover:translate-y-1"
+              className="h-auto max-w-full whitespace-normal sm:whitespace-nowrap text-center text-base sm:text-lg px-6 sm:px-10 py-4 sm:py-6 font-bold transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:translate-x-1 hover:translate-y-1"
             >
               <a href={EVENT.links.projects} target="_blank" rel="noopener noreferrer">View Projects on Devpost</a>
             </Button>
@@ -150,7 +150,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               asChild
-              className="text-lg px-10 py-6 font-bold border-4 transform rotate-1 hover:rotate-0 transition-all border-foreground shadow-[6px_6px_0px_0px_hsl(var(--primary))] hover:shadow-[3px_3px_0px_0px_hsl(var(--primary))] hover:translate-x-1 hover:translate-y-1"
+              className="h-auto max-w-full whitespace-normal sm:whitespace-nowrap text-center text-base sm:text-lg px-6 sm:px-10 py-4 sm:py-6 font-bold border-4 transform rotate-1 hover:rotate-0 transition-all border-foreground shadow-[6px_6px_0px_0px_hsl(var(--primary))] hover:shadow-[3px_3px_0px_0px_hsl(var(--primary))] hover:translate-x-1 hover:translate-y-1"
             >
               <a href={EVENT.upcomingEventsUrl} target="_blank" rel="noopener noreferrer">Upcoming {EVENT.organizer} Events</a>
             </Button>
