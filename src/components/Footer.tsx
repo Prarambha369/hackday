@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">HackDay Butwal</h3>
             <p className="text-sm text-muted-foreground">
-              A student-focused hackathon inspired by Major League Hacking,
+              A student-focused, official Major League Hacking event,
               bringing together Nepal's brightest innovators.
             </p>
           </div>
@@ -104,6 +104,17 @@ const Footer = () => {
               {EVENT.organizer}
             </a>
           </p>
+          {/* Official MLH 2026 season trust badge (from MLH's brand assets). Black on light, white on dark. */}
+          <a
+            href={EVENT.links.mlh}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block pt-4 transition-transform hover:-translate-y-1"
+            aria-label="Official Major League Hacking 2026 season event: view the MLH listing"
+          >
+            <img src="/badges/mlh-trust-badge-2026-black.svg" alt="" width={70} height={123} loading="lazy" className="h-28 w-auto dark:hidden" />
+            <img src="/badges/mlh-trust-badge-2026-white.svg" alt="" width={70} height={123} loading="lazy" className="h-28 w-auto hidden dark:block" />
+          </a>
           <p className="text-sm text-foreground">
             <a href={EVENT.links.mlh} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
               Official MLH event listing
@@ -114,7 +125,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="text-center text-sm text-muted-foreground">
           <p>
-            © 2026 HackDay Butwal by Butwal Hacks | Inspired by{" "}
+            © 2026 HackDay Butwal by Butwal Hacks | An official{" "}
             <a
               href="https://mlh.io"
               target="_blank"
@@ -122,7 +133,8 @@ const Footer = () => {
               className="text-primary hover:underline"
             >
               Major League Hacking
-            </a>
+            </a>{" "}
+            event
           </p>
         </div>
       </div>
