@@ -141,7 +141,7 @@ JUDGING (from Devpost):
 - Criteria: Problem-Solving, Designing, Presentation, Creativity, Concept
 - Judges: Vishal Shrestha (iCAN Education Services), Gaurav Giri (NotionKec), Madhav Poudel (CSIT Association of Nepal, Rupandehi)
 
-SPONSORS & PARTNERS: Main event partners Google Gemini and Major League Hacking. Title Sponsor iCAN Education Services; Silver Sponsor Al-Habibi; Bronze Sponsor Al Qayyoom Biryani. Partners: Tilottama Municipality (government patron), Lumbini World School (venue), Notion, GitHub Education, gen.xyz, Friends Cinemas, Nayan Eye Care Center, Bhoj Deals, Singapore Beverages Nepal, 36 Riverside (after-party). Community: GDG Kathmandu, Lumbini Lions, CSIT Association of Nepal Rupandehi, CSIT Association of BMC
+SPONSORS & PARTNERS: Main event partners Google Gemini and Major League Hacking. Title Sponsor iCAN Education Services; Gold Sponsor Al Qayyoom Biryani; Silver Sponsor Al-Habibi; Bronze Sponsor Singapore Beverages Nepal. Partners: Tilottama Municipality (government patron), Lumbini World School (venue), Notion, GitHub Education, gen.xyz, Friends Cinemas, Nayan Eye Care Center, Bhoj Deals, 36 Riverside (after-party). Community: GDG Kathmandu, Lumbini Lions, CSIT Association of Nepal Rupandehi, CSIT Association of BMC
 
 LOGISTICS & WHAT TO BRING:
 - Laptop, chargers, any hardware you intend to use, and student ID

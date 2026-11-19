@@ -5,8 +5,9 @@ import type { SponsorTier } from "@/data/sponsors";
 
 /** Logo circle and caption size per tier, largest first. */
 const SIZES: Record<SponsorTier, { circle: string; caption: string; gap: string }> = {
-  main: { circle: "w-44 h-44 sm:w-56 sm:h-56", caption: "max-w-[14rem] text-lg", gap: "gap-10 sm:gap-16" },
+  main: { circle: "", caption: "", gap: "" }, // rendered as wordmarks, see below
   title: { circle: "w-48 h-48 sm:w-64 sm:h-64", caption: "max-w-[16rem] text-lg", gap: "gap-12" },
+  gold: { circle: "w-44 h-44 sm:w-56 sm:h-56", caption: "max-w-[14rem] text-base", gap: "gap-12" },
   silver: { circle: "w-40 h-40 sm:w-52 sm:h-52", caption: "max-w-[13rem] text-base", gap: "gap-12" },
   bronze: { circle: "w-36 h-36 sm:w-44 sm:h-44", caption: "max-w-[12rem] text-base", gap: "gap-12" },
   partner: { circle: "w-28 h-28 sm:w-32 sm:h-32", caption: "max-w-[9rem] text-sm", gap: "gap-8 sm:gap-10" },
@@ -40,32 +41,51 @@ const Sponsors = () => {
                 <h3 className="text-center text-sm font-black uppercase tracking-widest text-muted-foreground mb-6">
                   {tier.label}
                 </h3>
-                <ul className={`flex flex-wrap justify-center ${size.gap}`}>
-                  {sponsors.map((sponsor) => (
-                    <li key={sponsor.logo} className="flex flex-col items-center gap-3">
-                      <div
-                        className={`rounded-full overflow-hidden bg-white border-2 border-foreground/10 transition-transform hover:scale-105 ${size.circle}`}
-                      >
-                        <img
-                          src={sponsor.logo}
-                          alt={sponsor.name}
-                          title={sponsor.name}
-                          loading="lazy"
-                          decoding="async"
-                          width={400}
-                          height={400}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <span className={`text-center leading-tight ${size.caption}`}>
-                        <span className="block text-foreground font-semibold">{sponsor.name}</span>
-                        {sponsor.role !== tier.label && (
-                          <span className="block text-muted-foreground text-xs">{sponsor.role}</span>
-                        )}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                {tier.id === "main" ? (
+                  /* Main partners: official wordmarks, small, on white so they read in dark mode too. */
+                  <ul className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
+                    {sponsors.map((sponsor) => (
+                      <li key={sponsor.logo}>
+                        <a
+                          href={sponsor.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center h-16 px-6 rounded-xl bg-white border-2 border-foreground/10 transition-transform hover:scale-105"
+                        >
+                          <img src={sponsor.logo} alt={sponsor.name} title={sponsor.name} className={`w-auto ${sponsor.logoHeight ?? "h-8 sm:h-9"}`} />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <ul className={`flex flex-wrap justify-center ${size.gap}`}>
+                    {sponsors.map((sponsor) => (
+                      <li key={sponsor.logo} className="flex flex-col items-center gap-3">
+                        <div
+                          className={`rounded-full overflow-hidden bg-white border-2 border-foreground/10 transition-transform hover:scale-105 ${size.circle}`}
+                        >
+                          {/* The name is printed right below, so the image itself is decorative. */}
+                          <img
+                            src={sponsor.logo}
+                            alt=""
+                            title={sponsor.name}
+                            loading="lazy"
+                            decoding="async"
+                            width={400}
+                            height={400}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <span className={`text-center leading-tight ${size.caption}`}>
+                          <span className="block text-foreground font-semibold">{sponsor.name}</span>
+                          {sponsor.role !== tier.label && (
+                            <span className="block text-muted-foreground text-xs">{sponsor.role}</span>
+                          )}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             );
           })}

@@ -50,8 +50,8 @@ never touch a component.
 | `judging.ts` | Judges and judging criteria |
 | `sponsors.ts` | Sponsors, their tier and role |
 
-**Sponsors.** Tiers set the logo size, largest first: Main Event Partners, Title, Silver,
-Bronze, Partners, Community Partners. To add one, put a square logo in `public/sponsors/`
+**Sponsors.** Tiers set the logo size, largest first: Main Event Partners, Title, Gold,
+Silver, Bronze, Partners, Community Partners. To add one, put a square logo in `public/sponsors/`
 (trim the white space so it fills the circle, about 400×400) and add an entry with its `tier`.
 
 **Event details.** After changing `event.ts`, also update the JSON-LD block and meta

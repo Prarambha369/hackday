@@ -5,18 +5,23 @@
  *
  * Tiers decide the logo size on the site, largest first.
  */
-export type SponsorTier = "main" | "title" | "silver" | "bronze" | "partner" | "community";
+export type SponsorTier = "main" | "title" | "gold" | "silver" | "bronze" | "partner" | "community";
 
 export interface Sponsor {
   name: string;
   role: string;
   logo: string;
   tier: SponsorTier;
+  /** Link for the logo (used for the main event partners). */
+  url?: string;
+  /** Tailwind height classes for wordmark logos, to balance their visual weight. */
+  logoHeight?: string;
 }
 
 export const TIERS: { id: SponsorTier; label: string }[] = [
   { id: "main", label: "Main Event Partners" },
   { id: "title", label: "Title Sponsor" },
+  { id: "gold", label: "Gold Sponsor" },
   { id: "silver", label: "Silver Sponsor" },
   { id: "bronze", label: "Bronze Sponsor" },
   { id: "partner", label: "Partners" },
@@ -24,12 +29,14 @@ export const TIERS: { id: SponsorTier; label: string }[] = [
 ];
 
 export const SPONSORS: Sponsor[] = [
-  { name: "Google Gemini", role: "Main Event Partners", logo: "/sponsors/google-gemini.png", tier: "main" },
-  { name: "Major League Hacking", role: "Main Event Partners", logo: "/sponsors/mlh.jpg", tier: "main" },
+  // Official wordmarks: Gemini (Google brand SVG), MLH (static.mlh.io brand assets).
+  { name: "Google Gemini", role: "Main Event Partners", logo: "/sponsors/google-gemini.svg", tier: "main", url: "https://gemini.google.com", logoHeight: "h-7 sm:h-8" },
+  { name: "Major League Hacking", role: "Main Event Partners", logo: "/sponsors/mlh.svg", tier: "main", url: "https://mlh.io", logoHeight: "h-10 sm:h-11" },
 
   { name: "iCAN Education Services", role: "Title Sponsor", logo: "/sponsors/ican-education.png", tier: "title" },
+  { name: "Al Qayyoom Biryani", role: "Gold Sponsor", logo: "/sponsors/al-qayyoom-biryani.png", tier: "gold" },
   { name: "Al-Habibi", role: "Silver Sponsor", logo: "/sponsors/al-habibi.png", tier: "silver" },
-  { name: "Al Qayyoom Biryani", role: "Bronze Sponsor", logo: "/sponsors/al-qayyoom-biryani.png", tier: "bronze" },
+  { name: "Singapore Beverages Nepal", role: "Bronze Sponsor", logo: "/sponsors/singapore-beverages.jpg", tier: "bronze" },
 
   { name: "Tilottama Municipality", role: "Government Patron", logo: "/sponsors/tilottama-nagarpalika.png", tier: "partner" },
   { name: "Lumbini World School", role: "Venue Partner", logo: "/sponsors/lumbini-world-school.png", tier: "partner" },
@@ -39,7 +46,6 @@ export const SPONSORS: Sponsor[] = [
   { name: "Friends Cinemas", role: "Theater Partner", logo: "/sponsors/friends-cinemas.png", tier: "partner" },
   { name: "Nayan Eye Care Center", role: "EyeCare Partner", logo: "/sponsors/nayan-eye-care.png", tier: "partner" },
   { name: "Bhoj Deals", role: "Delivery Partner", logo: "/sponsors/bhoj-deals.png", tier: "partner" },
-  { name: "Singapore Beverages Nepal", role: "Beverage Partner", logo: "/sponsors/singapore-beverages.jpg", tier: "partner" },
   { name: "36 Riverside", role: "After-party Partner", logo: "/sponsors/36-riverside.jpg", tier: "partner" },
 
   { name: "Google Developer Groups Kathmandu", role: "Outreach Partner", logo: "/sponsors/gdg-kathmandu.png", tier: "community" },
