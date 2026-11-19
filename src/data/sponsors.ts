@@ -12,6 +12,10 @@ export interface Sponsor {
   role: string;
   logo: string;
   tier: SponsorTier;
+  /** Link for the logo (used for the main event partners). */
+  url?: string;
+  /** Tailwind height classes for wordmark logos, to balance their visual weight. */
+  logoHeight?: string;
 }
 
 export const TIERS: { id: SponsorTier; label: string }[] = [
@@ -24,8 +28,9 @@ export const TIERS: { id: SponsorTier; label: string }[] = [
 ];
 
 export const SPONSORS: Sponsor[] = [
-  { name: "Google Gemini", role: "Main Event Partners", logo: "/sponsors/google-gemini.png", tier: "main" },
-  { name: "Major League Hacking", role: "Main Event Partners", logo: "/sponsors/mlh.jpg", tier: "main" },
+  // Official wordmarks: Gemini (Google brand SVG), MLH (static.mlh.io brand assets).
+  { name: "Google Gemini", role: "Main Event Partners", logo: "/sponsors/google-gemini.svg", tier: "main", url: "https://gemini.google.com", logoHeight: "h-7 sm:h-8" },
+  { name: "Major League Hacking", role: "Main Event Partners", logo: "/sponsors/mlh.svg", tier: "main", url: "https://mlh.io", logoHeight: "h-10 sm:h-11" },
 
   { name: "iCAN Education Services", role: "Title Sponsor", logo: "/sponsors/ican-education.png", tier: "title" },
   { name: "Al-Habibi", role: "Silver Sponsor", logo: "/sponsors/al-habibi.png", tier: "silver" },
