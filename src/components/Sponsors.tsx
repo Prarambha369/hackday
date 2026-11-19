@@ -5,6 +5,7 @@ import type { SponsorTier } from "@/data/sponsors";
 
 /** Logo circle and caption size per tier, largest first. */
 const SIZES: Record<SponsorTier, { circle: string; caption: string; gap: string }> = {
+  main: { circle: "w-44 h-44 sm:w-56 sm:h-56", caption: "max-w-[14rem] text-lg", gap: "gap-10 sm:gap-16" },
   title: { circle: "w-48 h-48 sm:w-64 sm:h-64", caption: "max-w-[16rem] text-lg", gap: "gap-12" },
   silver: { circle: "w-40 h-40 sm:w-52 sm:h-52", caption: "max-w-[13rem] text-base", gap: "gap-12" },
   bronze: { circle: "w-36 h-36 sm:w-44 sm:h-44", caption: "max-w-[12rem] text-base", gap: "gap-12" },
