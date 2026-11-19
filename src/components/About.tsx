@@ -49,9 +49,9 @@ const About = () => {
               </div>
             </div>
             <p className="text-lg text-foreground leading-relaxed mb-8 font-medium flex-1">
-              {EVENT.organizer} is a <span className="font-bold">student-run nonprofit</span> from Lumbini Province, Nepal,
-              founded in 2024. It runs free hackathons, game jams and hands-on workshops for young builders,
-              and organized HackDay Butwal. 🧡
+              <span className="font-bold">Lumbini's youth tech hub, for students, by students.</span> {EVENT.organizer} runs
+              free hackathons, workshops and project-based learning for students across Lumbini Province. No fees,
+              no experience required: just show up and build. 🧡
             </p>
             <Button
               variant="outline"
