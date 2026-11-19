@@ -14,6 +14,8 @@ export interface Sponsor {
   tier: SponsorTier;
   /** Link for the logo (used for the main event partners). */
   url?: string;
+  /** Wide wordmark logo. When set, it's shown in a wide card instead of the round logo. */
+  wordmark?: string;
   /** Tailwind height classes for wordmark logos, to balance their visual weight. */
   logoHeight?: string;
 }
@@ -33,7 +35,7 @@ export const SPONSORS: Sponsor[] = [
   { name: "Google Gemini", role: "Main Event Partners", logo: "/sponsors/google-gemini.svg", tier: "main", url: "https://gemini.google.com", logoHeight: "h-7 sm:h-8" },
   { name: "Major League Hacking", role: "Main Event Partners", logo: "/sponsors/mlh.svg", tier: "main", url: "https://mlh.io", logoHeight: "h-10 sm:h-11" },
 
-  { name: "iCAN Education Services", role: "Title Sponsor", logo: "/sponsors/ican-education.png", tier: "title" },
+  { name: "iCAN Education Services", role: "Title Sponsor", logo: "/sponsors/ican-education.png", tier: "title", wordmark: "/sponsors/ican-education-wide.jpg" },
   { name: "Al Qayyoom Biryani", role: "Gold Sponsor", logo: "/sponsors/al-qayyoom-biryani.png", tier: "gold" },
   { name: "Al-Habibi", role: "Silver Sponsor", logo: "/sponsors/al-habibi.png", tier: "silver" },
   { name: "Singapore Beverages Nepal", role: "Bronze Sponsor", logo: "/sponsors/singapore-beverages.jpg", tier: "bronze" },

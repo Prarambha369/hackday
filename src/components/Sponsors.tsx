@@ -59,7 +59,21 @@ const Sponsors = () => {
                   </ul>
                 ) : (
                   <ul className={`flex flex-wrap justify-center ${size.gap}`}>
-                    {sponsors.map((sponsor) => (
+                    {sponsors.map((sponsor) => sponsor.wordmark ? (
+                      /* Wide wordmarks (e.g. the title sponsor) look cramped in a circle; give them a wide card. */
+                      <li key={sponsor.logo}>
+                        <div className="flex items-center justify-center w-72 h-32 sm:w-[28rem] sm:h-44 px-8 rounded-2xl bg-white border-2 border-foreground/10 shadow-[6px_6px_0px_0px_hsl(var(--primary))] transition-transform hover:scale-105">
+                          <img
+                            src={sponsor.wordmark}
+                            alt={sponsor.name}
+                            title={sponsor.name}
+                            loading="lazy"
+                            decoding="async"
+                            className="max-h-full w-full object-contain"
+                          />
+                        </div>
+                      </li>
+                    ) : (
                       <li key={sponsor.logo} className="flex flex-col items-center gap-3">
                         <div
                           className={`rounded-full overflow-hidden bg-white border-2 border-foreground/10 transition-transform hover:scale-105 ${size.circle}`}
