@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Plane, Code2, Zap, Trophy } from "lucide-react";
-import logo from "@/assets/1000015171.png";
+import logo from "@/assets/hackday-logo.png";
+import { EVENT } from "@/data/event";
+import { PRIZE_POOL, PROJECT_COUNT } from "@/data/prizes";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
@@ -35,7 +37,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
 
       {/* Floating Icons */}
       <div className="absolute top-32 right-1/4 animate-float hidden lg:block">
@@ -101,7 +103,7 @@ const Hero = () => {
           <div className={`mb-8 flex justify-center transition-all duration-700 ${showLogo ? 'animate-[scale-in_0.5s_ease-out] opacity-100' : 'opacity-0 scale-50'}`}>
             <img
               src={logo}
-              alt="Butwal Hack"
+              alt={EVENT.name}
               className="w-full max-w-md h-auto hover:scale-105 transition-transform duration-300"
             />
           </div>
@@ -116,76 +118,60 @@ const Hero = () => {
             </svg>
           </div>
 
+          <p className="text-xs md:text-sm uppercase tracking-widest font-bold text-muted-foreground mb-2">Theme</p>
           <p className="text-2xl md:text-4xl font-bold text-primary mb-4 transform rotate-1 animate-slide-in-right">
-            Web Development & Innovation Hackathon
+            {EVENT.theme}
           </p>
+          <ul className="flex flex-wrap justify-center gap-3 mb-6" aria-label="Theme tags">
+            {EVENT.themeTags.map((tag) => (
+              <li key={tag} className="px-3 py-1 border-2 border-foreground bg-accent/20 text-sm font-bold text-foreground">
+                {tag}
+              </li>
+            ))}
+          </ul>
 
           <p className="text-base md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Join Butwal Hack, Nepal's premier hackathon in Butwal! 10 hours of web development, AI, mobile apps, and innovation. Student hackathon featuring MHL challenges. Unite with Nepal's brightest student innovators and builders.
+            {EVENT.name} by {EVENT.organizer} brought together student builders for {EVENT.durationHours} hours of web development, AI, mobile apps, and innovation. A Major League Hacking (MLH) student hackathon. Here's a look back at the event.
           </p>
 
-          {/* CTA Buttons - Non-uniform */}
+          {/* Archive notice + CTAs */}
+          <p className="inline-block mb-8 px-5 py-2 border-2 border-foreground bg-primary/10 font-bold text-foreground">
+            This event took place on {EVENT.dateLong} at {EVENT.venue}. Thank you to everyone who joined!
+          </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <Button
               size="lg"
-              className="text-lg px-10 py-6 font-bold transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1"
-              onClick={() => window.open('https://butwal.devpost.com/', '_blank')}
+              asChild
+              className="h-auto max-w-full whitespace-normal sm:whitespace-nowrap text-center text-base sm:text-lg px-6 sm:px-10 py-4 sm:py-6 font-bold transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:translate-x-1 hover:translate-y-1"
             >
-              Register on Devpost
+              <a href={EVENT.links.projects} target="_blank" rel="noopener noreferrer">View Projects on Devpost</a>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-10 py-6 font-bold border-4 transform rotate-1 hover:rotate-0 transition-all border-foreground shadow-[6px_6px_0px_0px_hsl(var(--primary))] hover:shadow-[3px_3px_0px_0px_hsl(var(--primary))] hover:translate-x-1 hover:translate-y-1"
-              onClick={() => {
-                const event = {
-                  title: "Butwal Hack",
-                  description: "Hackathon - Build, Learn, Win!",
-                  location: "Butwal, Nepal",
-                  startDate: "2026-01-17T08:00:00",
-                  endDate: "2026-01-17T18:00:00"
-                };
-
-                const formatLocal = (iso) => {
-                  // iso like YYYY-MM-DDTHH:MM:SS
-                  return iso.replace(/[-:]/g, '').split('.')[0];
-                };
-
-                const dtStart = formatLocal(event.startDate);
-                const dtEnd = formatLocal(event.endDate);
-
-                const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Butwal Hack//EN\nCALSCALE:GREGORIAN\nBEGIN:VTIMEZONE\nTZID:Asia/Kathmandu\nX-LIC-LOCATION:Asia/Kathmandu\nBEGIN:STANDARD\nDTSTART:19700101T000000\nTZOFFSETFROM:+0545\nTZOFFSETTO:+0545\nTZNAME:NPT\nEND:STANDARD\nEND:VTIMEZONE\nBEGIN:VEVENT\nDTSTART;TZID=Asia/Kathmandu:${dtStart}\nDTEND;TZID=Asia/Kathmandu:${dtEnd}\nSUMMARY:${event.title}\nDESCRIPTION:${event.description}\nLOCATION:${event.location}\nEND:VEVENT\nEND:VCALENDAR`;
-
-                const blob = new Blob([icsContent], { type: 'text/calendar' });
-                const url = URL.createObjectURL(blob);
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = 'butwal-hack-20260117.ics';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
+              asChild
+              className="h-auto max-w-full whitespace-normal sm:whitespace-nowrap text-center text-base sm:text-lg px-6 sm:px-10 py-4 sm:py-6 font-bold border-4 transform rotate-1 hover:rotate-0 transition-all border-foreground shadow-[6px_6px_0px_0px_hsl(var(--primary))] hover:shadow-[3px_3px_0px_0px_hsl(var(--primary))] hover:translate-x-1 hover:translate-y-1"
             >
-              Add to Calendar
+              <a href={EVENT.upcomingEventsUrl} target="_blank" rel="noopener noreferrer">Upcoming {EVENT.organizer} Events</a>
             </Button>
           </div>
 
           {/* Event Info - Tilted Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="bg-card border-4 border-foreground p-6 transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
-              <p className="text-5xl font-black text-primary mb-3 font-heading">10</p>
+            <div className="bg-card border-4 border-foreground p-6 transform -rotate-2 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:shadow-[12px_12px_0px_0px_hsl(var(--foreground))] hover:-translate-y-1">
+              <p className="text-5xl font-black text-primary mb-3 font-heading">{EVENT.durationHours}</p>
               <p className="text-xl font-bold text-foreground">Hours</p>
               <p className="text-sm text-muted-foreground mt-1">Of Innovation</p>
             </div>
-            <div className="bg-card border-4 border-foreground p-6 transform rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
+            <div className="bg-card border-4 border-foreground p-6 transform rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:shadow-[12px_12px_0px_0px_hsl(var(--foreground))] hover:-translate-y-1">
               <p className="text-5xl font-black text-primary mb-3 font-heading">48+</p>
               <p className="text-xl font-bold text-foreground">Hackers</p>
               <p className="text-sm text-muted-foreground mt-1">Participants</p>
             </div>
-            <div className="bg-card border-4 border-foreground p-6 transform -rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
-              <p className="text-5xl font-black text-primary mb-3 font-heading">🎁</p>
-              <p className="text-xl font-bold text-foreground">Prizes</p>
-              <p className="text-sm text-muted-foreground mt-1">To be decided</p>
+            <div className="bg-card border-4 border-foreground p-6 transform -rotate-1 hover:rotate-0 transition-all shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:shadow-[12px_12px_0px_0px_hsl(var(--foreground))] hover:-translate-y-1">
+              <p className="text-5xl font-black text-primary mb-3 font-heading">{PRIZE_POOL}</p>
+              <p className="text-xl font-bold text-foreground">In Prizes</p>
+              <p className="text-sm text-muted-foreground mt-1">{PROJECT_COUNT} projects submitted</p>
             </div>
           </div>
         </div>
@@ -193,7 +179,6 @@ const Hero = () => {
 
       {/* Decorative Bottom Elements (removed to keep section background plain white) */}
 
-      {/* Registration is handled on Devpost (link in Register buttons) */}
     </section>
   );
 };

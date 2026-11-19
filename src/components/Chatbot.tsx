@@ -4,6 +4,11 @@ import { Input } from "@/components/ui/input";
 import { MessageCircle, X, Send } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
+/** Mirror the chat function's limits so a request is never rejected after it's added to history. */
+const MAX_MESSAGE_CHARS = 1000;
+const MAX_HISTORY = 12;
+const MAX_BODY_BYTES = 60 * 1024; // server allows 64 KiB
+
 interface Message {
   role: "user" | "assistant";
   content: string;
@@ -14,11 +19,12 @@ const Chatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hi! I'm your Hack Day assistant. Ask me anything about the event!",
+      content: "Hi! I'm the HackDay Butwal assistant. Ask me anything about the event!",
     },
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [inputError, setInputError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -30,17 +36,26 @@ const Chatbot = () => {
   }, [messages]);
 
   const sendMessage = async () => {
-    if (!input.trim() || isLoading) return;
+    if (!supabase || !input.trim() || isLoading) return;
 
-    const userMessage: Message = { role: "user", content: input };
+    const userMessage: Message = { role: "user", content: input.trim() };
+    const body = { messages: [...messages, userMessage].slice(-MAX_HISTORY) };
+    // Check before touching state, so an oversized message stays editable and never enters history.
+    if (
+      userMessage.content.length > MAX_MESSAGE_CHARS ||
+      new TextEncoder().encode(JSON.stringify(body)).byteLength > MAX_BODY_BYTES
+    ) {
+      setInputError(`Please keep your message under ${MAX_MESSAGE_CHARS} characters.`);
+      return;
+    }
+
+    setInputError(null);
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke("chat", {
-        body: { messages: [...messages, userMessage] },
-      });
+      const { data, error } = await supabase.functions.invoke("chat", { body });
 
       if (error) throw error;
 
@@ -62,13 +77,17 @@ const Chatbot = () => {
     }
   };
 
+  // Backend not configured: render nothing rather than a broken widget.
+  if (!supabase) return null;
+
   return (
     <>
       {/* Floating Chat Button */}
       {!isOpen && (
         <Button
+          aria-label="Open chat assistant"
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all"
+          className="fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:translate-x-1 hover:translate-y-1 transition-all"
         >
           <MessageCircle className="h-6 w-6" />
         </Button>
@@ -76,11 +95,11 @@ const Chatbot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-96 h-[32rem] bg-card border-4 border-foreground shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] flex flex-col transform -rotate-1">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-96 h-[min(32rem,calc(100dvh-2rem))] bg-card border-4 border-foreground shadow-[10px_10px_0px_0px_hsl(var(--foreground))] flex flex-col transform -rotate-1">
           {/* Header */}
           <div className="bg-primary p-4 border-b-4 border-foreground flex justify-between items-center">
             <h3 className="font-black text-lg text-primary-foreground">
-              Hack Day Assistant
+              HackDay Butwal Assistant
             </h3>
             <Button
               variant="ghost"
@@ -127,20 +146,33 @@ const Chatbot = () => {
             <div className="flex gap-2">
               <Input
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyPress={(e) => e.key === "Enter" && sendMessage()}
+                onChange={(e) => {
+                  setInput(e.target.value);
+                  if (inputError) setInputError(null);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.nativeEvent.isComposing) sendMessage();
+                }}
                 placeholder="Ask about the event..."
                 className="flex-1 border-2 border-foreground"
                 disabled={isLoading}
+                aria-invalid={!!inputError}
+                aria-describedby={inputError ? "chat-input-error" : undefined}
               />
               <Button
                 onClick={sendMessage}
                 disabled={isLoading || !input.trim()}
                 className="transform rotate-1 hover:rotate-0"
+                aria-label="Send message"
               >
                 <Send className="h-4 w-4" />
               </Button>
             </div>
+            {inputError && (
+              <p id="chat-input-error" role="alert" className="mt-2 text-sm font-semibold text-destructive">
+                {inputError}
+              </p>
+            )}
           </div>
         </div>
       )}

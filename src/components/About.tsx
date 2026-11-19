@@ -14,7 +14,7 @@ const About = () => {
         <div className="max-w-5xl mx-auto">
           <div className="relative inline-block mb-12">
             <h2 className="text-4xl md:text-6xl font-black text-foreground font-heading transform -rotate-2">
-              About Butwal Hack
+              About HackDay Butwal
             </h2>
             <svg className="absolute -bottom-3 left-4 w-3/4 h-4" viewBox="0 0 200 12" preserveAspectRatio="none">
               <path d="M0,7 Q50,3 100,8 T200,6" stroke="hsl(var(--primary))" strokeWidth="4" fill="none" strokeLinecap="round"/>
@@ -22,10 +22,10 @@ const About = () => {
           </div>
           
           <div className="mb-12 transform rotate-1">
-            <Card className="p-10 border-4 border-foreground bg-card shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
+            <Card className="p-10 border-4 border-foreground bg-card shadow-[10px_10px_0px_0px_hsl(var(--foreground))]">
               <p className="text-xl md:text-2xl text-foreground leading-relaxed font-medium">
-                Butwal Hack is a <span className="font-black text-primary">web development & innovation hackathon</span> in Butwal, Nepal, 
-                inspired by <span className="font-black text-primary">Major League Hacking (MHL)</span>. This student hackathon unites <span className="font-black text-primary">creators, developers, 
+                HackDay Butwal is a <span className="font-black text-primary">web development & innovation hackathon</span> in Butwal, Nepal, 
+                inspired by <span className="font-black text-primary">Major League Hacking (MLH)</span>. This student hackathon unites <span className="font-black text-primary">creators, developers, 
                 and innovators</span> from across Nepal for web development challenges, AI projects, mobile app development, and more. Build impactful solutions, gain experience, and connect with Nepal's tech community! 🚀
               </p>
             </Card>
@@ -50,7 +50,7 @@ const About = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-4 border-foreground font-bold text-lg px-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all transform rotate-1 hover:rotate-0"
+              className="border-4 border-foreground font-bold text-lg px-8 shadow-[6px_6px_0px_0px_hsl(var(--foreground))] hover:shadow-[3px_3px_0px_0px_hsl(var(--foreground))] hover:translate-x-1 hover:translate-y-1 transition-all transform rotate-1 hover:rotate-0"
               onClick={() => window.open('https://mlh.io', '_blank')}
             >
               Learn More About MLH

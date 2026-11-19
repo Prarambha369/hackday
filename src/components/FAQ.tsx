@@ -6,22 +6,18 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Download, HelpCircle } from "lucide-react";
+import { EVENT } from "@/data/event";
 
 const FAQ = () => {
   const faqs = [
     {
       question: "Is it free?",
-      answer: "Yes!! It's free under MHL.",
+      answer: "Yes! Participation is completely free.",
     },
     {
       question: "Do I need prior experience?",
       answer:
-        "Not at all! Butwal Hack is designed for hackers of all skill levels. We'll have workshops for beginners and mentors to help you throughout the event.",
-    },
-    {
-      question: "Is it free?",
-      answer:
-        "No. The pricing details will be revealed soon. Stay tuned for more information!",
+        "Not at all! HackDay Butwal is designed for hackers of all skill levels. Mentors were on hand to help teams throughout the event.",
     },
     {
       question: "What's the team size requirement?",
@@ -31,17 +27,17 @@ const FAQ = () => {
     {
       question: "What's the judging process?",
       answer:
-        "Projects will be judged based on innovation, technical complexity, design, and impact. You'll present your project in a 3-minute demo to our panel of judges.",
+        "Projects were judged on problem-solving, design, presentation, creativity, and concept. At the end of the day every team presented what they built to the judges.",
     },
     {
       question: "What should I bring?",
       answer:
-        "Bring your laptop, chargers, any hardware you want to use, and your student ID. Come prepared for a full 12-hour innovation marathon!",
+        "Bring your laptop, chargers, any hardware you want to use, and your student ID. Come prepared for a full 10-hour innovation marathon!",
     },
     {
       question: "What if I have more questions?",
       answer:
-        "Feel free to reach out to us at support@butwalhacks.com for quick answers!",
+        `Feel free to reach out to us at ${EVENT.contact.support} for quick answers!`,
     },
   ];
 
@@ -62,12 +58,12 @@ const FAQ = () => {
             </svg>
           </div>
           <p className="text-lg md:text-xl text-muted-foreground font-medium">
-            Frequently Asked Questions about Butwal Hack, Nepal's web development and student innovation hackathon 💡
+            Frequently Asked Questions about HackDay Butwal, Nepal's web development and student innovation hackathon 💡
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto mb-12">
-          <div className="border-4 border-foreground bg-card p-8 transform -rotate-1 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
+          <div className="border-4 border-foreground bg-card p-8 transform -rotate-1 shadow-[10px_10px_0px_0px_hsl(var(--foreground))]">
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border-b-2 border-foreground/20">

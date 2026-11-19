@@ -1,3 +1,4 @@
+import { EVENT } from "@/data/event";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -23,7 +24,7 @@ const CodeOfConduct = () => {
             Code of Conduct
           </h1>
           <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-4">
-            Butwal Hack
+            HackDay Butwal
           </h2>
           <p className="text-lg text-muted-foreground font-medium">
             Effective Date: November 13, 2025
@@ -33,7 +34,7 @@ const CodeOfConduct = () => {
         {/* Content Sections */}
         <div className="space-y-10">
           {/* Summary */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-4">Summary</h3>
             <p className="text-foreground/90 leading-relaxed">
               Be respectful towards other people and try to be good. Not even once in a lifetime, harassment and
@@ -44,11 +45,11 @@ const CodeOfConduct = () => {
           </section>
 
           {/* Our Commitment */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-4">Our Commitment</h3>
             <p className="text-foreground/90 leading-relaxed">
-              Butwal Hack aims to provide a safe and supportive environment for all teenage participants (under
-              18) at Butwal Hack. We promise that every young person, regardless of gender, age, sexual
+              HackDay Butwal aims to provide a safe and supportive environment for all teenage participants (under
+              18) at HackDay Butwal. We promise that every young person, regardless of gender, age, sexual
               orientation, disability, physical appearance, race, religion, nationality, socio-economic background,
               or any other personal characteristic, should be able to discover, invent, and collaborate without
               discrimination or harassment. This Code of Conduct outlines the organization's values and the
@@ -57,7 +58,7 @@ const CodeOfConduct = () => {
           </section>
 
           {/* Expected Behavior */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-6">Expected Behavior</h3>
             <ul className="space-y-3">
               <li className="flex gap-4">
@@ -92,7 +93,7 @@ const CodeOfConduct = () => {
           </section>
 
           {/* Unacceptable Behavior */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-6">Unacceptable Behavior</h3>
             <p className="text-foreground/90 leading-relaxed mb-6">
               Some examples of possible behavior that may not be accepted at Hack Day Butwal are:
@@ -138,7 +139,7 @@ const CodeOfConduct = () => {
           </section>
 
           {/* Scope */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-4">Scope</h3>
             <p className="text-foreground/90 leading-relaxed">
               The present Code of Conduct is mandatory for everyone who is in any way related to Hack Day
@@ -151,7 +152,7 @@ const CodeOfConduct = () => {
           </section>
 
           {/* Reporting Concerns */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-6">Reporting Concerns</h3>
             <p className="text-foreground/90 leading-relaxed mb-6">
               In case you witness or get to know about a behavior that is against this Code of Conduct or if you
@@ -161,7 +162,7 @@ const CodeOfConduct = () => {
             <ol className="space-y-3 mb-6">
               <li className="flex gap-4">
                 <span className="text-primary font-bold">1.</span>
-                <span className="text-foreground/90">Directly addressing a Butwal Hack organizer or volunteer (check for staff badges or team members who are designated).</span>
+                <span className="text-foreground/90">Directly addressing a HackDay Butwal organizer or volunteer (check for staff badges or team members who are designated).</span>
               </li>
               <li className="flex gap-4">
                 <span className="text-primary font-bold">2.</span>
@@ -169,7 +170,7 @@ const CodeOfConduct = () => {
               </li>
               <li className="flex gap-4">
                 <span className="text-primary font-bold">3.</span>
-                <span className="text-foreground/90">Dispatching a note to <a href="mailto:support@butwalhacks.com" className="text-primary font-semibold hover:underline">support@butwalhacks.com</a>.</span>
+                <span className="text-foreground/90">Dispatching a note to <a href={`mailto:${EVENT.contact.support}`} className="text-primary font-semibold hover:underline">{EVENT.contact.support}</a>.</span>
               </li>
             </ol>
             <p className="text-foreground/90 leading-relaxed mb-6">
@@ -195,12 +196,12 @@ const CodeOfConduct = () => {
           </section>
 
           {/* Enforcement */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-6">Enforcement</h3>
             <p className="text-foreground/90 leading-relaxed mb-6">
               In a case where an individual violates the regulations outlined in this Code of Conduct, the
               subsequent handling of such a case will be conducted in a timely and fair manner very much in
-              accordance with the facts of the case. Based on the severity and nature of the issue, Butwal Hack
+              accordance with the facts of the case. Based on the severity and nature of the issue, HackDay Butwal
               may only choose to carry out some of the actions from the list below which is not exhaustive:
             </p>
             <ul className="space-y-3">
@@ -235,20 +236,20 @@ const CodeOfConduct = () => {
           <section className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg p-8 shadow-lg border border-primary/20">
             <h3 className="text-2xl font-bold text-foreground mb-4">Final Note</h3>
             <p className="text-foreground/90 leading-relaxed mb-4">
-              Butwal Hack is a place where young technologists are given the necessary environment to be
+              HackDay Butwal is a place where young technologists are given the necessary environment to be
               curious, collaborate, and come up with creative ideas. By following this Code of Conduct, we create
               a community where every teenage participant can thrive and innovate safely.
             </p>
-            <p className="text-foreground font-semibold">— The Butwal Hack Team</p>
+            <p className="text-foreground font-semibold">— The Butwal Hacks Team</p>
           </section>
 
           {/* Contact */}
-          <section className="bg-white dark:bg-slate-900 rounded-lg p-8 shadow-lg border border-border">
+          <section className="bg-card rounded-lg p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-4">Contact</h3>
             <p className="text-foreground/90 leading-relaxed">
               If you want to know more or need help, please get in touch with us at{" "}
-              <a href="mailto:support@butwalhacks.com" className="text-primary font-semibold hover:underline">
-                support@butwalhacks.com
+              <a href={`mailto:${EVENT.contact.support}`} className="text-primary font-semibold hover:underline">
+                {EVENT.contact.support}
               </a>
             </p>
           </section>

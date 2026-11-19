@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/1000015171.png";
-import topLeftLogo from "@/assets/579501461_1354121903124379_5661373177081933099_n-removebg-preview.png";
+import logo from "@/assets/hackday-logo.png";
+import topLeftLogo from "@/assets/butwal-hacks-mark.png";
+import { EVENT } from "@/data/event";
+import ThemeToggle from "@/components/ThemeToggle";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -21,7 +23,7 @@ const Navbar = () => {
   const navLinks = [
     { label: "About", href: "#about" },
     { label: "Schedule", href: "#schedule" },
-    { label: "Challenges", href: "#challenges" },
+    { label: "Prizes", href: "#challenges" },
     { label: "Sponsors", href: "#sponsors" },
     { label: "FAQ", href: "#faq" },
     { label: "Code of Conduct", href: "/cod" },
@@ -59,7 +61,7 @@ const Navbar = () => {
           >
             <img
               src={isScrolled ? logo : topLeftLogo}
-              alt="Butwal Hack"
+              alt="HackDay Butwal"
               className={`w-auto transform group-hover:scale-105 transition-all duration-500 ${isScrolled ? 'h-16 md:h-20 translate-y-0 opacity-100' : 'h-20 md:h-28 -translate-y-1 opacity-100'}`}
             />
           </a>
@@ -79,19 +81,25 @@ const Navbar = () => {
             <Button 
               size="sm" 
               className="transform -rotate-1 hover:rotate-0"
-              onClick={() => window.open('https://butwal.devpost.com/', '_blank')}
+              onClick={() => window.open(EVENT.upcomingEventsUrl, '_blank', 'noopener,noreferrer')}
             >
-              Register on Devpost
+              Upcoming Events
             </Button>
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 border-2 border-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile: theme toggle + menu button */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              className="p-2 border-2 border-foreground text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -108,8 +116,8 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button size="sm" className="w-full" onClick={() => window.open('https://butwal.devpost.com/', '_blank')}>
-                Register on Devpost
+              <Button size="sm" className="w-full" onClick={() => window.open(EVENT.upcomingEventsUrl, '_blank', 'noopener,noreferrer')}>
+                Upcoming Events
               </Button>
             </div>
           </div>

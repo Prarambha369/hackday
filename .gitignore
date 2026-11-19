@@ -27,3 +27,6 @@ build
 *.njsproj
 *.sln
 *.sw?
+
+# Local Deno type-check artifact
+deno.lock

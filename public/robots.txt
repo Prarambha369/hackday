@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://butwalhacks.com/sitemap.xml
+Sitemap: https://hackday.butwalhacks.com/sitemap.xml
