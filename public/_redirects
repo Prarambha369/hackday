@@ -1,0 +1,9 @@
+# Cloudflare Pages redirects.
+#
+# SPA fallback (the old vercel.json rewrite of /(.*) to /index.html): Cloudflare
+# Pages does this natively. The build has no top-level 404.html, so any path that
+# is not a real file (for example /cod) is served index.html with status 200 and
+# React Router takes over. A "/* /index.html 200" rule is not needed here; Pages
+# rejects it as an infinite loop.
+#
+# Add real redirects below, one per line: <from> <to> [status]
