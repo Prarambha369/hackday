@@ -14,7 +14,7 @@ now an archive of the event: theme, prizes and winners, judges, sponsors and tea
 
 Vite, React 18, TypeScript, Tailwind CSS, a few shadcn/ui components, React Router and
 next-themes (light/dark mode). An optional Supabase Edge Function powers the chat assistant.
-Hosted on Vercel.
+Hosted on Cloudflare Pages as a static site (see [Hosting](#hosting)).
 
 ## Getting started
 
@@ -36,7 +36,9 @@ widget is simply hidden.
 | `VITE_SUPABASE_URL` | Supabase project URL for the chat assistant |
 | `VITE_SUPABASE_PUBLISHABLE_KEY` | Supabase publishable (anon) key |
 
-On Vercel, set them under **Project → Settings → Environment Variables** and redeploy.
+They are read at build time. To turn the chat on in production, add them as `env:` on the
+build step in `.github/workflows/deploy-pages.yml` (the publishable key is public by design) and
+add the site's origin to `ALLOWED_ORIGINS` in `supabase/functions/chat/index.ts`.
 
 ## Editing content
 
@@ -79,7 +81,30 @@ supabase/
   functions/chat/       Edge Function for the chat assistant (origin allow-list,
                         64 KB body cap, input sanitising)
   migrations/           Database migrations
-vercel.json             SPA rewrite so deep links like /cod work
+public/_headers         Cloudflare Pages response headers
+public/_redirects       Cloudflare Pages redirects (SPA fallback is built in)
+vercel.json             Old Vercel SPA rewrite, kept only for rollback
+```
+
+## Hosting
+
+The site is a static build on **Cloudflare Pages** (Free plan), project `hackday-butwal`:
+
+- Production: https://hackday.butwalhacks.com (CNAME to `hackday-butwal.pages.dev`)
+- Pages URL: https://hackday-butwal.pages.dev
+
+Every push to `main` builds and deploys through `.github/workflows/deploy-pages.yml`; it can
+also be run by hand from the Actions tab. It needs the repository secret `CLOUDFLARE_API_TOKEN`
+(a token with Cloudflare Pages: Edit) and the repository variable `CLOUDFLARE_ACCOUNT_ID`.
+
+Deep links such as `/cod` work because Pages serves `index.html` for any path that is not a
+file (there is no top-level `404.html`). Headers live in `public/_headers`.
+
+Manual deploy:
+
+```sh
+npm run build
+npx wrangler pages deploy dist --project-name hackday-butwal --branch main --force
 ```
 
 ## Deploying the chat function
