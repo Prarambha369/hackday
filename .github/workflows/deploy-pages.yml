@@ -14,6 +14,8 @@ permissions:
 
 jobs:
   deploy:
+    # Only main is ever deployed, also for manual runs started from another branch.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
